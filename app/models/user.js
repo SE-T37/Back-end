@@ -2,20 +2,22 @@ const mongoose = require("mongoose"); //import mongoose
 
 // user schema
 const UserSchema = new mongoose.Schema({
-    username:{
-        type: String,
+    username: {type:String, required: true},
+    mail: String,
+    password: String,
+    foto: String,
+    /*
+    viaggi: [String],
+    seguiti: [String],
+    autenticato:{
+        type: Boolean,
         required: true,
+        default: false,
+
     },
-    mail:{
-        type: String,
-        required: true,
-    },
-    password:{
-        type: String,
-    },
-    foto: {
-        type: String,
-    }    
+
+    // autenticato will be replaced when creating the autentication settings
+    */
 });
 
 const User = mongoose.model('User', UserSchema); //convert to model named user
