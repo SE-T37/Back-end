@@ -1,0 +1,25 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "NomadBees project for Software Eng. Course 2022",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SE-T37/Back-end.git"
+  },
+  "keywords": [
+    "SE",
+    "Nomadbees",
+    "app"
+  ],
+  "author": "Bregola, Libanora, Pontalti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SE-T37/Back-end/issues"
+  },
+  "homepage": "https://github.com/SE-T37/Back-end#readme"
+}
