@@ -6,8 +6,7 @@ const UserSchema = new mongoose.Schema({
     mail: String,
     password: String,
     foto: String,
-    /*
-    viaggi: [String],
+    viaggi:[String],
     seguiti: [String],
     autenticato:{
         type: Boolean,
@@ -16,8 +15,7 @@ const UserSchema = new mongoose.Schema({
 
     },
 
-    // autenticato will be replaced when creating the autentication settings
-    */
+    // autenticato will be replaced when creating the autentication setting
 });
 
 const User = mongoose.model('User', UserSchema); //convert to model named user
