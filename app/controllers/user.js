@@ -1,12 +1,8 @@
-const user = require('./models/user');
+console.log("controller");
 
-// write here user function
-// see https://github.com/antbucc/IS-22_23/tree/master/Demo/controllers
+const newUser = (req, res, next) => {
+    res.json({message: "POST new User"});
 
-
-
-
-//export controller functions
-module.exports = {
-    // function names
 };
+
+module.exports = { newUser };

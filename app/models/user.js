@@ -1,9 +1,22 @@
 const mongoose = require("mongoose"); //import mongoose
 
 // user schema
-const userSchema = new mongoose.Schema({
-    //user schema to define...
+const UserSchema = new mongoose.Schema({
+    username:{
+        type: String,
+        required: true,
+    },
+    mail:{
+        type: String,
+        required: true,
+    },
+    password:{
+        type: String,
+    },
+    foto: {
+        type: String,
+    }    
 });
 
-const user = mongoose.model('user', TeaSchema); //convert to model named user
-module.exports = user; //export for controller use
+const User = mongoose.model('User', UserSchema); //convert to model named user
+module.exports = User; //export for controller use
