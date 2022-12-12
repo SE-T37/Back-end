@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/SE-T37/Back-end/issues"
   },
-  "homepage": "https://github.com/SE-T37/Back-end#readme"
+  "homepage": "https://github.com/SE-T37/Back-end#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose-express-api": "^0.0.3"
+  }
 }
