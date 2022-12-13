@@ -1,8 +1,6 @@
 const User = require ('../models/user');
-console.log("controller");
-
+console.log("HERE");
 const newUser = (req, res, next) => {
-  
     //firs check existance in db
     User.findOne({ username: req.body.username}, (err, data) => {
 
