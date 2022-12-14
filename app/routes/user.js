@@ -7,4 +7,6 @@ const UserController = require('../controllers/user');
 
 router.post('/signup', upload.none(), UserController.newUser);
 
+router.get('/search',upload.none(), UserController.searchUsers);
+
 module.exports = router;

@@ -9,5 +9,7 @@ in the controller folder. ./app/controlles
 1. newUser:
    Is the API that implements the creation of a new user object during the
    signup process. .../user/signup .
-2. authenticate:
+3. SearchUsers: 
+   --/user/search  (need to be tokenchecked before)
+4. authenticate:
    .../authentications/api .

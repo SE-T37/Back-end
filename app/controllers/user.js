@@ -1,4 +1,5 @@
 const User = require ('../models/user');
+
 const newUser = (req, res, next) => {
     //firs check existance in db
     //console.log (req.body.username);
@@ -27,4 +28,19 @@ const newUser = (req, res, next) => {
 
 };
 
-module.exports = { newUser };
+const searchUsers = async function(req, res, next){
+    //firs check existance in db
+    //console.log (req.body.username);
+
+    let users = await User.find({});
+    users = users.map((user) => {
+        return {
+            self: '/' + user.username,
+            username: user.username
+        };
+    });
+    res.status(200).json(users);
+
+};
+
+module.exports = { newUser, searchUsers };
