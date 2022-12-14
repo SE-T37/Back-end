@@ -1,11 +1,10 @@
 const User = require ('../models/user');
-console.log("HERE");
 const newUser = (req, res, next) => {
     //firs check existance in db
+    //console.log (req.body.username);
     User.findOne({ username: req.body.username}, (err, data) => {
 
         if(!data){
-
             const newUser = new User({
                 username: req.body.username,
                 mail: req.body.mail,

@@ -1,13 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const user = require ('../models/user');
-
+const user = require('../models/user'); // get our mongoose model
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const multiparty = require('multiparty');
 
-const authenticate = async function(req, res, next) {
-    //firs check existance in db
-    //console.log (req.body.username);
+// ---------------------------------------------------------
+// route to authenticate and get a new token
+// --------------------------------------------------------
+router.post('', async function (req, res) {	// find the user
+	/*
+	let form = new multiparty.Form();
+	form.parse(req, function(err, fields, files) {
+		Object.keys(fields).forEach(function(name) {
+			console.log('got field named ' + name);
+		});
+	});
+	*/
+	//console.log(req.body.username);
 	let User = await user.findOne({
 		username: req.body.username 
 	}).exec();
@@ -43,6 +52,8 @@ const authenticate = async function(req, res, next) {
 			self: "authentications/" + user._id
 		});
 	}
-};
+});
 
-module.exports = { authenticate };
+
+
+module.exports = router;

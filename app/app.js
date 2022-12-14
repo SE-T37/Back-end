@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
+const bodyParser = require('body-parser');
 
-const authentication = require('./controllers/authentication.js');
+const authentication = require('./routes/authentication.js');
 const tokenChecker = require('./controllers/tokenChecker.js');
 
 const user = require('./routes/user');
@@ -10,6 +11,7 @@ const user = require('./routes/user');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 app.use(cors())
 

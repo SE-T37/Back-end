@@ -1,5 +1,6 @@
 const app = require('./app.js');
 const mongoose = require('mongoose');
+//mongoose.set('strictQuery',false);
 require('dotenv').config(); 
 
 const port = process.env.PORT || 8080;
