@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
     foto: String,
     viaggi:[String],
     seguiti: [String],
+    //token: String,
     autenticato:{
         type: Boolean,
         required: true,

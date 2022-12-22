@@ -3,9 +3,9 @@ const multer = require ('multer');
 const upload = multer ();
 const router = express.Router();
 
-const UserController = require('../controllers/user');
+const editController = require('../controllers/edit');
 
-router.post('/signup', upload.none(), UserController.newUser);
+router.put('', upload.none(), editController.editUsers);
 
 
 module.exports = router;

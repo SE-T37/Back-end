@@ -17,30 +17,18 @@ const newUser = (req, res, next) => {
             })
 
             newUser.save( (err,data) => {
-                if (err) return res.json({Error: err});
-                return res.json(data);
+                if (err) return res.status(500).json({Error: err});
+                else
+                   return res.status(201).json(data);
+                   
             })
         }else{
-            if (err) return res.json('Something went wrong, please try again. ${err}');
-            return res.json({message: "User already exists"});
+            if (err) return res.status(500).json('Something went wrong, please try again. ${err}');
+            return res.status(400).json({message: "User already exists"});
         }
     })
 
 };
 
-const searchUsers = async function(req, res, next){
-    //firs check existance in db
-    //console.log (req.body.username);
 
-    let users = await User.find({});
-    users = users.map((user) => {
-        return {
-            self: '/' + user.username,
-            username: user.username
-        };
-    });
-    res.status(200).json(users);
-
-};
-
-module.exports = { newUser, searchUsers };
+module.exports = { newUser};

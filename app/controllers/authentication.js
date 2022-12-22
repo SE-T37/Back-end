@@ -34,6 +34,7 @@ const authenticate = async function(req, res, next) {
 				expiresIn: 86400 // expires in 24 hours
 			}
 			var token = jwt.sign(payload, process.env.SUPER_SECRET, options);
+			//user.token = token;
 			
 			res.json({
 				success: true,
@@ -41,7 +42,7 @@ const authenticate = async function(req, res, next) {
 				token: token,
 				username: user.username,
 				id: user._id,
-				self: "authentications/api/" + user.username
+				self: "authentications/api/" + user._id
 			});
 		}
 	}

@@ -10,6 +10,6 @@ in the controller folder. ./app/controlles
    Is the API that implements the creation of a new user object during the
    signup process. .../user/signup .
 3. SearchUsers: 
-   --/user/search  (need to be tokenchecked before)
+   --/search  (need to be tokenchecked before)
 4. authenticate:
    .../authentications/api .

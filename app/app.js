@@ -7,6 +7,8 @@ const authentication = require('./routes/authentication.js');
 const tokenChecker = require('./controllers/tokenChecker.js');
 
 const user = require('./routes/user');
+const search = require('./routes/search');
+const edit = require('./routes/edit');
 
 
 app.use(express.json());
@@ -28,24 +30,15 @@ app.use((req,res,next) => {
 })
 
 
+app.use('/authentications', authentication);  //authentications/api/
+app.use('/user', user);  //authentications/user/signup
+//app.use('/search',tokenChecker);  //authentications/search/
+//app.use('/editUser',tokenChecker);  //authentications/editUser/
+
+app.use('/editUser', edit);
+app.use('/search', search);
 
 
-
-/**
- * Authentication routing and middleware
- */
-app.use('/authentications', authentication);
-
-// Protect booklendings endpoint
-// access is restricted only to authenticated users
-// a valid token must be provided in the request
-
-
-
-/**
- * Resource routing
- */
-app.use('/user', user);
 
 /* Default 404 handler */
 app.use((req, res) => {
