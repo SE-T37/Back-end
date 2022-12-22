@@ -7,6 +7,7 @@ const authentication = require('./routes/authentication.js');
 const tokenChecker = require('./controllers/tokenChecker.js');
 
 const user = require('./routes/user');
+const viaggio = require('./routes/viaggio');
 
 
 app.use(express.json());
@@ -46,6 +47,7 @@ app.use('/authentications', authentication);
  * Resource routing
  */
 app.use('/user', user);
+app.use('/viaggio', viaggio);
 
 /* Default 404 handler */
 app.use((req, res) => {

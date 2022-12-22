@@ -13,3 +13,7 @@ in the controller folder. ./app/controlles
    --/user/search  (need to be tokenchecked before)
 4. authenticate:
    .../authentications/api .
+
+6. newViaggio:
+   creazione di un nuovo viaggio
+   .../viaggio
