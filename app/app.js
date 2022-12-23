@@ -9,6 +9,7 @@ const tokenChecker = require('./controllers/tokenChecker.js');
 const user = require('./routes/user');
 const search = require('./routes/search');
 const edit = require('./routes/edit');
+const segui= require('./routes/segui');
 
 
 app.use(express.json());
@@ -32,11 +33,13 @@ app.use((req,res,next) => {
 
 app.use('/authentications', authentication);  //authentications/api/
 app.use('/user', user);  //authentications/user/signup
-//app.use('/search',tokenChecker);  //authentications/search/
-//app.use('/editUser',tokenChecker);  //authentications/editUser/
+app.use('/search',tokenChecker);  // search/
+app.use('/editUser',tokenChecker);  // editUser/
+//app.use('/segui', tokenChecker); // segui
 
-app.use('/editUser', edit);
 app.use('/search', search);
+app.use('/editUser', edit);
+app.use('/segui', segui);
 
 
 

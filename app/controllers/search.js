@@ -1,18 +1,5 @@
 const User = require ('../models/user');
 
-const printAll = async function(req, res, next){
-    // NOT USED
-
-    let users = await User.find({});
-    users = users.map((user) => {
-        return {
-            self: '/' + user.username,
-            username: user.username
-        };
-    });
-    res.status(200).json(users);
-
-};
 
 const searchUsers = async function(req, res, next){
     //firs check existance in db
