@@ -10,6 +10,7 @@ const user = require('./routes/user');
 const search = require('./routes/search');
 const edit = require('./routes/edit');
 const segui= require('./routes/segui');
+const viaggio= require('./routes/viaggio');
 
 
 app.use(express.json());
@@ -36,10 +37,12 @@ app.use('/newUser', user);
 app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
 app.use('/followUser', tokenChecker); // followUser
+app.use('/viaggio',tokenChecker); // viaggio
 
 app.use('/searchUser', search);
 app.use('/editUser', edit);
 app.use('/followUser', segui);
+app.use('/viaggio',viaggio);
 
 
 

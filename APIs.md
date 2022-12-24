@@ -17,3 +17,6 @@ in the controller folder. ./app/controlles
    .../authenticate.
 5. editUser:
     ../editUser
+6. newViaggio:
+   creazione di un nuovo viaggio
+   .../viaggio
