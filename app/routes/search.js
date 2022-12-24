@@ -3,8 +3,9 @@ const multer = require ('multer');
 const upload = multer ();
 const router = express.Router();
 
-const AuthenticationController = require('../controllers/authentication.js');
+const SearchController = require('../controllers/search');
 
-router.post('', upload.none(), AuthenticationController.authenticate);
+router.get('', upload.none(), SearchController.searchUsers);
+
 
 module.exports = router;
