@@ -5,6 +5,6 @@ const router = express.Router();
 
 const AuthenticationController = require('../controllers/authentication.js');
 
-router.post('/api', upload.none(), AuthenticationController.authenticate);
+router.post('', upload.none(), AuthenticationController.authenticate);
 
 module.exports = router;

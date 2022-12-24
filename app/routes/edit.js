@@ -5,7 +5,7 @@ const router = express.Router();
 
 const editController = require('../controllers/edit');
 
-router.put('', upload.none(), editController.editUsers);
+router.put('', upload.none(), editController.editUser);
 
 
 module.exports = router;

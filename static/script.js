@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const page1Btn = document.getElementById('btn-page-1');
-    const page2Btn = document.getElementById('btn-page-2');
+    const page1Btn = document.getElementById('slide-item-1');
+    const page2Btn = document.getElementById('slide-item-2');
     const page3Btn = document.getElementById('btn-page-3');
     const page4Btn = document.getElementById('btn-page-4');
   

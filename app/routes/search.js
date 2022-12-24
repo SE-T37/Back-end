@@ -5,7 +5,7 @@ const router = express.Router();
 
 const SearchController = require('../controllers/search');
 
-router.post('', upload.none(), SearchController.searchUsers);
+router.get('', upload.none(), SearchController.searchUsers);
 
 
 module.exports = router;

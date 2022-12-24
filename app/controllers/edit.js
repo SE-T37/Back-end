@@ -1,16 +1,16 @@
 const User = require ('../models/user');
 
+const editUser = async function(req, res, next){
 
-const editUsers = async function(req, res, next){
+  // NB: l'errore 401 è già controllato dal tokenchecker
 
-    User.findByIdAndUpdate(req.body._id, req.body, {new:true}, (err,user) =>{
-        if(err) return res.status(400).send(err);
-        else{
-          return res.status(200).send(user);
-        }
-      });
+  User.findByIdAndUpdate(req.loggedUser.id, req.body, {new:true}, (err,user) =>{
+    if(err) return res.status(400).json({Error: err});
+    else{
+      return res.status(200).json(user);
+    }
+  });
     
 };
-
-module.exports = { editUsers };
+module.exports = { editUser };
 

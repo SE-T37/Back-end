@@ -8,10 +8,12 @@ in the controller folder. ./app/controlles
 
 1. newUser:
    Is the API that implements the creation of a new user object during the
-   signup process. .../user/signup .
-3. SearchUsers: 
-   ../search  (need to be tokenchecked before)
+   signup process. .../newUser  .
+2. searchUsers: 
+   ../searchUser  (need to be tokenchecked before)
+3. followUser:
+    ../followUser (need to be tokenchecked before)
 4. authenticate:
-   .../authentications/api .
+   .../authenticate.
 5. editUser:
-    ../edit
+    ../editUser

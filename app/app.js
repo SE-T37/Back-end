@@ -31,15 +31,15 @@ app.use((req,res,next) => {
 })
 
 
-app.use('/authentications', authentication);  //authentications/api/
-app.use('/user', user);  //authentications/user/signup
-app.use('/search',tokenChecker);  // search/
+app.use('/authenticate', authentication);  // authenticate
+app.use('/newUser', user);  
+app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
-//app.use('/segui', tokenChecker); // segui
+app.use('/followUser', tokenChecker); // followUser
 
-app.use('/search', search);
+app.use('/searchUser', search);
 app.use('/editUser', edit);
-app.use('/segui', segui);
+app.use('/followUser', segui);
 
 
 

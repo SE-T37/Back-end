@@ -1,8 +1,6 @@
 const User = require ('../models/user');
 
-const newUser = (req, res, next) => {
-    //firs check existance in db
-    //console.log (req.body.username);
+const newUser = (req, res, next) => {;
     User.findOne({ username: req.body.username}, (err, data) => {
 
         if(!data){
@@ -22,13 +20,12 @@ const newUser = (req, res, next) => {
                    return res.status(201).json(data);
                    
             })
+            
         }else{
             if (err) return res.status(500).json('Something went wrong, please try again. ${err}');
             return res.status(400).json({message: "User already exists"});
         }
     })
-
 };
-
 
 module.exports = { newUser};
