@@ -7,6 +7,7 @@ const ViaggioSchema = new mongoose.Schema({
     titolo: String,
     descrizione: String,
     foto: String,
+    lunghezza: Number,
     percorso: [{        //array di tappe
         foto: {type:String, default:''},
         descrizione: {type:String, default:''},

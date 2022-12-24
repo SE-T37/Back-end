@@ -5,11 +5,11 @@ const User = require ('../models/user');
 //Creazione nuovo viaggio
 const newViaggio = (req, res, next) => {
             const newViaggio = new Viaggio({
-                username_utente: req.body.username_utente,  //come ottengo l'username di chi pubblica il viaggio?
+                username_utente: req.loggedUser.username,
                 titolo: req.body.titolo,
                 descrizione: req.body.descrizione,
                 foto: req.body.foto,
-                
+                lunghezza: req.body.lunghezza,
             })           
             
             //aggiunta delle tappe al viaggio
@@ -35,9 +35,7 @@ const newViaggio = (req, res, next) => {
 
     };
 
-//visualizza viaggio con mappa google
-
-
+    
 module.exports = {
     newViaggio,
 };
