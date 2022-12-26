@@ -1,5 +1,4 @@
 const User = require ('../models/user');
-
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
 
@@ -17,7 +16,7 @@ const authenticate = async function(req, res, next) {
 			res.status(400).json({ success: false, message: 'Authentication failed. Wrong password.' });
 		}
 		else{
-			user.autenticato=true;
+			user.autenticato=true; 
 			// if user is found and password is right create a token
 			var payload = {
 				username: user.username,

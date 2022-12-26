@@ -11,10 +11,6 @@ const seguiUser = async function(req, res, next){
         // controllo che l'utente che voglio seguire esista
         return res.status(404).json({message: "User not found"});
     }
-    if(user_richiedente.seguiti.length==0){
-        user_richiedente.seguiti.push(user_to_follow.username);
-        return res.status(200).json(user_richiedente.seguiti); 
-    }
     else{
         if(user_richiedente.seguiti.includes(req.body.username)){
             // controllo che l'utente non sia già tra quelli seguiti

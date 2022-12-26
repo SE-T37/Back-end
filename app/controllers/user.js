@@ -9,9 +9,9 @@ const newUser = (req, res, next) => {;
                 mail: req.body.mail,
                 password: req.body.password,
                 foto: req.body.foto,
-                viaggi: req.body.viaggi,
-                seguiti: req.body.seguiti,
-                autenticato: req.body.autenticato,
+                //viaggi: req.body.viaggi, 
+                //seguiti: req.body.seguiti,
+                //autenticato: req.body.autenticato, 
             })
 
             newUser.save( (err,data) => {

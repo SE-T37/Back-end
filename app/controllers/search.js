@@ -10,7 +10,7 @@ const searchUsers = async function(req, res, next){
     else{
         users = users.map((user) => {
             return {
-                self: '/' + user.username,
+                //self: '/' + user.username,
                 username: user.username
             };
         });

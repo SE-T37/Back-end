@@ -15,11 +15,7 @@ const viaggio= require('./routes/viaggio');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
 app.use(cors())
-
-
 
 //app.use('/', express.static(process.env.FRONTEND || 'static'));
 // If process.env.FRONTEND folder does not contain index.html then use the one from static
@@ -37,12 +33,12 @@ app.use('/newUser', user);
 app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
 app.use('/followUser', tokenChecker); // followUser
-app.use('/viaggio',tokenChecker); // viaggio
+app.use('/newViaggio',tokenChecker); // viaggio
 
 app.use('/searchUser', search);
-app.use('/editUser', edit);
+app.use('/editUser', edit); 
 app.use('/followUser', segui);
-app.use('/viaggio',viaggio);
+app.use('/newViaggio',viaggio);
 
 
 
