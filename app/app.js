@@ -11,6 +11,7 @@ const search = require('./routes/search');
 const edit = require('./routes/edit');
 const segui= require('./routes/segui');
 const viaggio= require('./routes/viaggio');
+const searchViaggio = require('./routes/searchViaggio');
 
 
 app.use(express.json());
@@ -33,12 +34,15 @@ app.use('/newUser', user);
 app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
 app.use('/followUser', tokenChecker); // followUser
+app.use('/viaggio',tokenChecker); // viaggio
+app.use('/searchViaggio',tokenChecker);  // searchViaggio/
 app.use('/newViaggio',tokenChecker); // viaggio
 
 app.use('/searchUser', search);
 app.use('/editUser', edit); 
 app.use('/followUser', segui);
-app.use('/newViaggio',viaggio);
+app.use('/viaggio',viaggio);
+app.use('/searchViaggio', searchViaggio);
 
 
 
