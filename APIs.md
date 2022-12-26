@@ -19,4 +19,7 @@ in the controller folder. ./app/controlles
     ../editUser
 6. newViaggio:
    creazione di un nuovo viaggio
-   .../viaggio
+   .../newViaggio
+7. searchViaggio:
+   ricerca di un viaggio
+   .../searchViaggio

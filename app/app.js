@@ -34,15 +34,15 @@ app.use('/newUser', user);
 app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
 app.use('/followUser', tokenChecker); // followUser
-app.use('/viaggio',tokenChecker); // viaggio
-app.use('/searchViaggio',tokenChecker);  // searchViaggio/
 app.use('/newViaggio',tokenChecker); // viaggio
+app.use('/searchViaggio',tokenChecker);  // searchViaggio/
 
 app.use('/searchUser', search);
 app.use('/editUser', edit); 
 app.use('/followUser', segui);
-app.use('/viaggio',viaggio);
+app.use('/newViaggio',viaggio);
 app.use('/searchViaggio', searchViaggio);
+
 
 
 
