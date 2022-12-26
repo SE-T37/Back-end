@@ -1,0 +1,44 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "NomadBees",
+      "description": "NomadBees project for S.E.",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:8000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Nomadbees",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/authenticate": {
+            "post": {
+                "tags": [
+                    "Autenticazione"
+                ],
+                "summary": "Login user",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400":{
+                        "description": "Bad request"
+                    },
+                    "404":{
+                        "description": "Not found"
+                    }
+                }
+            }
+        }
+    }
+  }

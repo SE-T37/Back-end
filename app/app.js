@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument= require('./swagger.json');
+app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 const authentication = require('./routes/authentication.js');
 const tokenChecker = require('./controllers/tokenChecker.js');
@@ -16,7 +21,7 @@ const searchViaggio = require('./routes/searchViaggio');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+//app.use(cors());
 
 //app.use('/', express.static(process.env.FRONTEND || 'static'));
 // If process.env.FRONTEND folder does not contain index.html then use the one from static
@@ -26,7 +31,7 @@ app.use(cors())
 app.use((req,res,next) => {
     console.log(req.method + ' ' + req.url)
     next()
-})
+});
 
 
 app.use('/authenticate', authentication);  // authenticate
@@ -43,15 +48,19 @@ app.use('/followUser', segui);
 app.use('/newViaggio',viaggio);
 app.use('/searchViaggio', searchViaggio);
 
-
-
-
 /* Default 404 handler */
 app.use((req, res) => {
     res.status(404);
     res.json({ error: 'Not found' });
 });
 
+
+app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerDocument)
+);
+    
 
 
 module.exports = app;
