@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "localhost:8000",
+    "host": "localhost:8080",
     "basePath": "/",
     "tags": [
       {
@@ -21,24 +21,137 @@
     "consumes": ["application/json"],
     "produces": ["application/json"],
     "paths": {
-        "/authenticate": {
-            "post": {
-                "tags": [
-                    "Autenticazione"
-                ],
-                "summary": "Login user",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    },
-                    "400":{
-                        "description": "Bad request"
-                    },
-                    "404":{
-                        "description": "Not found"
-                    }
+      "/authenticate": {
+        "post": {
+          "tags": [
+              "Authentication"
+          ],
+          "summary": "User login",    
+          "parameters":[{
+            "in": "body",
+            "name": "credentials",
+            "description": "user credentials",
+            "schema":{
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "default": "testUser1"
+                },
+                "password": {
+                  "type": "string",
+                  "default": "password"
                 }
+              }
             }
+          }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400":{
+              "description": "Bad request"
+            },
+            "404":{
+              "description": "Not found"
+            }
+          }
         }
+      },
+      "/newUser":{
+        "post":{
+          "tags": ["Signup"],
+          "summary": "New user signup",
+          "parameters":[{
+            "in": "body",
+            "name": "Data",
+            "description": "Data of the new user profile",
+            "schema":{
+              "type": "object",
+              "properties":{
+                "username":{
+                  "type":"string",
+                  "default": "newUser1",
+                  "required": true
+                },
+                "password":{
+                  "type":"string",
+                  "default": "randompassword",
+                  "required": true
+                },
+                "mail":{
+                  "type":"string",
+                  "default": "test@gmail.com"
+                },
+                "foto":{
+                  "type": "string"
+                }
+              }
+            }
+          }],
+          "responses":{
+            "201":{
+              "description": "Created",
+              "schema":{
+                "$ref": "#/definitions/user"
+              }
+            },
+            "400":{
+              "description": "Bad request"
+            },
+            "401":{
+              "description": "Unauthorized"
+            },
+            "500":{
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/searcUser":{
+        "get":{
+          "tags": ["searchUser"],
+          "summary": "Search users",
+          "description": "The API is tokenchecked so if token is not passed it returns 401",
+          "parameters":[{
+            "in": "path",
+            "name": "username",
+            "description": "Data of the new user profile",
+            "default": "newUser1"
+          }],
+          "responses":{
+            "200":{
+              "description": "OK",
+              "schema":{
+                "username":{
+                  "type": "string"
+                }
+              }
+            },
+            "401":{
+              "description": "Unauthorized"
+            },
+            "404":{
+              "description": "Not found"
+            }
+          }
+        }
+      }
+    },
+    "definitions":{
+      "user":{
+        "properties":{
+          "username":{"type":"string","required":true},
+          "password":{"type":"string","required":true},
+          "mail":{"type":"string","required":true},
+          "foto":{"type":"string"},
+          "viaggio":{"type":"array", "default":[]},
+          "seguiti":{"type":"array", "default":[]},
+          "autenticato":{"type":"boolean"},
+          "_id":{"type":"string"},
+          "_v":{"type":"string"}
+        }
+      } 
     }
   }

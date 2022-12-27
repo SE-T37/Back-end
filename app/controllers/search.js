@@ -3,7 +3,7 @@ const User = require ('../models/user');
 const searchUsers = async function(req, res, next){
     
     // NB: l'errore 401 è già controllato dal tokenchecker
-    let users = await User.find({ username: { $regex: req.body.username , $options: 'i' } });
+    let users = await User.find({ username: { $regex: req.params.username , $options: 'i' } });
     if(!users){
         return res.status(404).json({message: "User not found"});
     }
