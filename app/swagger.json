@@ -14,7 +14,7 @@
     "tags": [
       {
         "name": "Nomadbees",
-        "description": "API for users in the system"
+        "description": "API used for the site NomadBees"
       }
     ],
     "schemes": ["http"],
@@ -109,17 +109,26 @@
           }
         }
       },
-      "/searcUser":{
+      "/searchUser":{
         "get":{
           "tags": ["searchUser"],
           "summary": "Search users",
-          "description": "The API is tokenchecked so if token is not passed it returns 401",
-          "parameters":[{
-            "in": "path",
-            "name": "username",
-            "description": "Data of the new user profile",
-            "default": "newUser1"
-          }],
+          "description": "The API is tokenchecked so if token is not in the parameters it returns 401",
+          "parameters":[
+            {
+              "name": "username",
+             "in": "query",
+              "description": "Data of the new user profile",
+              "default": "newUser1",
+              "required":true
+            },
+            {
+              "name":"token",
+              "in":  "query",
+              "description": "Token for authorization and info",
+              "required": false
+            }
+          ],
           "responses":{
             "200":{
               "description": "OK",
@@ -131,6 +140,95 @@
             },
             "401":{
               "description": "Unauthorized"
+            },
+            "404":{
+              "description": "Not found"
+            },
+            "400":{
+              "description": "Bad request"
+            }
+          }
+        }
+      },
+      "/editUser":{
+        "put":{
+          "tags": ["editUser"],
+          "summary": "Edit a user profile",
+          "description": "The API edits the parameters of a user profile given the one passed in the request, NB: without token it returns 401",
+          "parameters":[{
+            "in": "body",
+            "name": "Data",
+            "description": "Data changed of the user profile",
+            "schema":{
+              "type": "object",
+              "properties":{
+                "mail":{
+                  "type":"string",
+                  "default": "mail.changed@gmail.com"
+                },
+                "password":{
+                  "type":"string",
+                  "default":"newpassword"
+                },
+                "foto":{
+                  "type":"string",
+                  "default":"nefoto"
+                },
+                "token":{
+                 "type":"string",
+                 "default":"insertTokenHere"
+                }
+              }
+            }
+          }],
+          "responses":{
+            "200":{
+              "description": "User modified successfully",
+              "schema":{
+                "$ref": "#/definitions/user"
+              }
+            },
+            "401":{
+              "description": "Unauthorized"
+            },
+            "400":{
+              "description": "Bad request"
+            }
+          }
+        }
+      },
+      "/followUser":{
+        "put":{
+          "tags": ["followUser"],
+          "summary": "Follow another user profile",
+          "description": "The API permits to a ueser to follow another one given the username. NB: without token it returns 401",
+          "parameters":[{
+            "in": "body",
+            "name": "Data",
+            "description": "Username of the user to follow",
+            "schema":{
+              "type": "object",
+              "properties":{
+                "username":{
+                  "type":"string",
+                  "default": "newUser1"
+                },
+                "token":{
+                 "type":"string",
+                 "default":"insertTokenHere"
+                }
+              }
+            }
+          }],
+          "responses":{
+            "200":{
+              "description": "User modified successfully"
+            },
+            "401":{
+              "description": "Unauthorized"
+            },
+            "400":{
+              "description": "Bad request"
             },
             "404":{
               "description": "Not found"
