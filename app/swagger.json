@@ -237,6 +237,253 @@
         }
       }
     },
+    "/newViaggio":{
+      "post":{
+        "tags": ["newViaggio"],
+        "summary": "Post a new viaggio",
+        "description": "The API is tokenchecked so if token is not passed it returns 401",
+        "parameters":[{
+          "in": "body",
+          "name": "Data",
+          "description": "Data of the new viaggio",
+          "schema":{
+            "type": "object",
+            "properties":{
+              "titolo":{
+                "type":"string",
+                "default": "Camminata a Roma"
+              },
+              "descrizione":{
+                "type":"string",
+                "default": "Breve camminata nel centro di Roma"
+              },
+              "foto":{
+                "type":"string",
+                "default": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/roma-getty.jpg?v=133898"
+              },
+              "lunghezza":{
+                "type": "number",
+                "default": 200
+              },
+              "foto1":{
+                "type":"string",
+                "default": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/roma-getty.jpg?v=133898"
+              },
+              "descrizione1":{
+                "type":"string",
+                "default": "Il colosseo"
+              },
+              "latitudine1":{
+                "type":"string",
+                "default": "10.253"
+              },
+              "longitudine1":{
+                "type":"string",
+                "default": "13.356"
+              },
+              "foto2":{
+                "type":"string",
+                "default": "https://michelangelobuonarrotietornato.files.wordpress.com/2022/05/trevi.jpg"
+              },
+              "descrizione2":{
+                "type":"string",
+                "default": "La Fontana di Trevi"
+              },
+              "latitudine2":{
+                "type":"string",
+                "default": "11.253"
+              },
+              "longitudine2":{
+                "type":"string",
+                "default": "14.356"
+              },
+              "foto3":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione3":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine3":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine3":{
+                "type":"string",
+                "default": ""
+              },
+              "foto4":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione4":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine4":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine4":{
+                "type":"string",
+                "default": ""
+              },
+              "foto5":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione5":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine5":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine5":{
+                "type":"string",
+                "default": ""
+              },
+              "foto6":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione6":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine6":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine6":{
+                "type":"string",
+                "default": ""
+              },
+              "foto7":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione7":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine7":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine7":{
+                "type":"string",
+                "default": ""
+              },
+              "foto8":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione8":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine8":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine8":{
+                "type":"string",
+                "default": ""
+              },
+              "foto9":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione9":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine9":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine9":{
+                "type":"string",
+                "default": ""
+              },
+              "foto10":{
+                "type":"string",
+                "default": ""
+              },
+              "descrizione10":{
+                "type":"string",
+                "default": ""
+              },
+              "latitudine10":{
+                "type":"string",
+                "default": ""
+              },
+              "longitudine10":{
+                "type":"string",
+                "default": ""
+              }
+            }
+          }
+        }],
+        "responses":{
+          "201":{
+            "description": "Created",
+            "schema":{
+              "$ref": "#/definitions/viaggio"
+            }
+          },
+          "400":{
+            "description": "Bad request"
+          },
+          "401":{
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/searcViaggio":{
+      "get":{
+        "tags": ["searchViaggio"],
+        "summary": "Search a viaggio",
+        "description": "The API is tokenchecked so if token is not passed it returns 401",
+        "parameters":[{
+          "in": "path",
+          "name": "titolo",
+          "description": "Title of the viaggio",
+          "default": "Trento"
+        },
+        {
+          "in": "path",
+          "name": "lunghezzaMin",
+          "description": "Minimum legth of the viaggio",
+          "default": "0"
+        },
+        {
+          "in": "path",
+          "name": "lunghezzaMax",
+          "description": "Maximum legth of the viaggio",
+          "default": "1000"
+        }
+        ],
+        "responses":{
+          "200":{
+            "description": "OK",
+            "schema":{
+              "$ref": "#/definitions/viaggio"
+            }
+          },
+          "401":{
+            "description": "Unauthorized"
+          },
+          "404":{
+            "description": "Not found"
+          }
+        }
+      }
+    },
     "definitions":{
       "user":{
         "properties":{
@@ -249,6 +496,27 @@
           "autenticato":{"type":"boolean"},
           "_id":{"type":"string"},
           "_v":{"type":"string"}
+        }
+      },
+      "viaggio":{
+        "properties":{
+          "username_utente":{"type":"string","required":true},
+          "titolo":"string",
+          "descrizione":"string",
+          "foto":"string",
+          "lunghezza":"number",
+          "percorso":{
+            "type":"array","minItems":2,"maxItems":10,
+            "items":{
+              "type":"object",
+              "properties":{
+               "foto":{"type":"string", "default":""},
+               "descrizione":{"type":"string","default":""},
+               "latitudine":{"type":"string","default":""},
+               "longitudine":{"type":"string","default":""}
+              }
+            }             
+          }
         }
       } 
     }
