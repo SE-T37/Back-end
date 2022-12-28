@@ -240,7 +240,7 @@
       "post":{
         "tags": ["newViaggio"],
         "summary": "Post a new viaggio",
-        "description": "The API is tokenchecked so if token is not passed it returns 401",
+        "description": "The API creates a new viaggio. NB: without token it returns 401",
         "parameters":[{
           "in": "body",
           "name": "Data",
@@ -248,6 +248,9 @@
           "schema":{
             "type": "object",
             "properties":{
+              "token":{
+                "type":"string"
+              },
               "titolo":{
                 "type":"string",
                 "default": "Camminata a Roma"
@@ -447,24 +450,29 @@
       "get":{
         "tags": ["searchViaggio"],
         "summary": "Search a viaggio",
-        "description": "The API is tokenchecked so if token is not passed it returns 401",
+        "description": "The API permits to search a viaggio. NB: without token it returns 401",
         "parameters":[{
-          "in": "path",
+          "in": "query",
           "name": "titolo",
           "description": "Title of the viaggio",
           "default": "Trento"
         },
         {
-          "in": "path",
+          "in": "query",
           "name": "lunghezzaMin",
           "description": "Minimum legth of the viaggio",
           "default": "0"
         },
         {
-          "in": "path",
+          "in": "query",
           "name": "lunghezzaMax",
           "description": "Maximum legth of the viaggio",
           "default": "1000"
+        },
+        {
+          "in": "query",
+          "name": "token",
+          "description": "token user that is searching"
         }
         ],
         "responses":{
