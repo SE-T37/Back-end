@@ -6,8 +6,8 @@ const seguiUser = async function(req, res, next){
     const id_richiedente=req.loggedUser.id;
     let user_to_follow = await User.findOne({ username: req.body.username });
     let user_richiedente= await User.findOne({ _id: id_richiedente});
-
-    if(!user_to_follow){
+    
+    if(user_to_follow==null){
         // controllo che l'utente che voglio seguire esista
         return res.status(404).json({message: "User not found"});
     }

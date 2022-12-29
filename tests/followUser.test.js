@@ -4,10 +4,9 @@ const app = require("../app/app");
 const mongoose = require("mongoose");
 mongoose.set('strictQuery',false);
 const url= "http://localhost:8080" || process.env.HEROKU;
-
-
+const seguiUser= require("../app/controllers/segui");
+const User= require("../app/models/user");
 // NB: This API is tokenchecked
-
 
 
 beforeAll(async () => {
@@ -18,21 +17,27 @@ beforeAll(async () => {
 afterAll(() => {
     mongoose.connection.close(true);
 });    
+var token= jwt.sign({username: "testUser1",
+ id: "63a9efde2ad60959c9f04bc4"}, 
+process.env.SUPER_SECRET, {expiresIn: 86400});
 
-
+/*
 test('Follow user, not authorized',()=>{
+    console.log("User is not authorized");
     return request(app).put('/followUser')
     .set('Accept', 'application/json')
     .expect(401);
 })
 
 
-var token= jwt.sign({username: "alfredo2", password: "qwert12323h"}, 
+var token= jwt.sign({username: "testUser1",
+ id: "63a9efde2ad60959c9f04bc4"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
 const body1={
     token: token,
 }
+
 test('Follow user, no user passed or not found',()=>{
     return request(app).put('/followUser')
     .set('Accept', 'application/json')
@@ -40,24 +45,60 @@ test('Follow user, no user passed or not found',()=>{
     .expect(404);
 })
 
-/*
- If i test directly User x follow User y
- then if i run the test again i will lose a test case.
-The solution is moking
+const body2={
+    token: token,
+    username: "john"
+}
 
-*/
 
-test('Follow user' , ()=>{
-    User.findOne = jest.fn((query, cb) => cb(null, null));
-    newUser.save = jest.fn((cb) => cb(new Error('Error saving user'), null));
-    const res = {
-        status: jest.fn().mockReturnThis(),
-        json: jest.fn().mockReturnThis()
-    };
-    return request(app).post('/newUser')
+test('Follow user, but already following' , ()=>{    
+    return request(app).put('/followUser')
     .set('Accept', 'application/json')
-    .send(body4)
-    .expect(500)
-    .expect({message: ('Error saving user')});
+    .send(body2)
+    .expect({message: ('Already following')});
     
 })
+
+
+//If i test directly User x follow User y
+//then if i run the test again i will lose a test case.
+//The solution is mocking
+
+
+*/
+const body3={
+    token: token,
+    username: "exp244322"
+}
+
+test('Follow user, not following' , ()=>{    
+    //fake saving of the new user
+    const mockSave = jest.fn();
+    User.prototype.save = mockSave;
+
+    return request(app)
+    .put('/followUser')
+    .set('Accept', 'application/json')
+    .send(body3)
+    .expect(200); 
+
+})
+
+test('Follow user, not following but connection fail' , ()=>{    
+    const mockIncludes = jest.spyOn(Array.prototype, "includes").mockReturnValue(false);
+    mockIncludes();
+    const mockSave= jest.spyOn(User.prototype, "save").mockImplementation(()=>
+    {
+        throw new Error("Internal server error");
+    });
+    mockSave();
+    return request(app).put('/followUser')
+    .set('Accept', 'application/json')
+    .send(body3)
+    .expect(500); 
+    
+
+
+})
+
+

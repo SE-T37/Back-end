@@ -87,8 +87,10 @@ test('Signup, correct credentials, server fail', ()=>{
 })
 
 test('Signup, correct credentials, save in database fails' , ()=>{
-    User.findOne = jest.fn((query, cb) => cb(null, null));
-    newUser.save = jest.fn((cb) => cb(new Error('Error saving user'), null));
+    User.findOne = jest.fn((query, cb) => cb(null,null));
+    const mockSave = jest.fn((cb) => cb({message:'Error saving user'}, null));
+    User.prototype.save = mockSave;
+
     const res = {
         status: jest.fn().mockReturnThis(),
         json: jest.fn().mockReturnThis()
@@ -96,7 +98,6 @@ test('Signup, correct credentials, save in database fails' , ()=>{
     return request(app).post('/newUser')
     .set('Accept', 'application/json')
     .send(body4)
-    .expect(500)
     .expect({message: ('Error saving user')});
     
 })

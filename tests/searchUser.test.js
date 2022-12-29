@@ -27,7 +27,7 @@ test('Search user, not authorized',()=>{
 })
 
 
-var token= jwt.sign({username: "testUser1", password: "password"}, 
+var token= jwt.sign({username: "testUser1"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
 

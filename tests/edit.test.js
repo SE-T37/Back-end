@@ -27,7 +27,7 @@ test('Edit user, not authorized',()=>{
 })
 
 
-var token= jwt.sign({username: "alfredo2", password: "qwert12323h"}, 
+var token= jwt.sign({username: "alfredo2"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
 const body1={
