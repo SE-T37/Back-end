@@ -1,5 +1,4 @@
 const request= require("supertest");
-const jwt = require ("jsonwebtoken");
 const app = require("../app/app");
 const mongoose = require("mongoose");
 mongoose.set('strictQuery',false);
@@ -13,10 +12,7 @@ beforeAll(async () => {
 afterAll(() => {
     mongoose.connection.close(true);
 });    
-/*
-var token= jwt.sign({username: "testUser1", password: "password"}, 
-process.env.SUPER_SECRET, {expiresIn: 86400});
-*/
+
 const body1={
     username: 'NotExistingUsername',
     password: 'NotExistingPassword',

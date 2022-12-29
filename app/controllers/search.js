@@ -3,7 +3,7 @@ const User = require ('../models/user');
 const searchUsers = async function(req, res, next){
     
     let username= req.query.username;
-    if(!username){
+    if(username==null){
         return res.status(400).json({message: "Bad request"});
     }
     // NB: l'errore 401 è già controllato dal tokenchecker
