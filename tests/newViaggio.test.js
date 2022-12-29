@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 mongoose.set('strictQuery',false);
 const url= "http://localhost:8080" || process.env.HEROKU;
 
+const User= require("../app/models/user");
+
 
 beforeAll(async () => {
     jest.setTimeout(8000);
@@ -58,4 +60,13 @@ test('New viaggio, server down or others',()=>{
     .set('Accept', 'application/json')
     .send(body1)
     .expect(404);
+})
+
+test('New viaggio, save fail' , ()=>{    
+    const mockSave = jest.fn(()=>{throw new Error('Internal server error')});
+    User.prototype.save = mockSave;
+    return request(app).post('/newViaggio')
+    .set('Accept', 'application/json')
+    .send(body1)
+    .expect(404); 
 })

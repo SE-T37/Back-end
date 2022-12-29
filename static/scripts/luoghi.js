@@ -23,23 +23,23 @@ function setBounds(term) {
 }
 
 function getViaggi(custom) {
-    var searchTerm;
+    let searchTerm;
 
     if (custom) {
-        searchTerm = document.getElementById("viaggisearchbox").value;
+        searchTerm = "".concat(document.getElementById("viaggisearchbox").value);
     }
     else {
         searchTerm = " ";
 
     }
-    fetch('../../app/controllers/searchViaggio', {
+    const params = new URLSearchParams();
+    params.set('titolo', searchTerm);
+    params.set('lunghezzaMin', lowerBound);
+    params.set('lunghezzaMax', upperBound);
+
+    fetch(`/searchViaggio?${params}`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/jason' },
-        query: JSON.stringify({
-            luogo: searchTerm,
-            lunghezzaMin: lowerBound,
-            lunghezzaMax: upperBound
-        }),
+        headers: { 'Content-Type': 'application/json' },
     })
         .then((response) => {
             return response.json();
@@ -47,18 +47,18 @@ function getViaggi(custom) {
 
         .then((data) => { 
             const keys = Object.keys(data);
-            var index = 1;
+            var index = 0;
             var field;
 
-            while(data[keys[index]] != null && index <= 6){
-                field = document.getElementById("viaggio".concat(index));
+            while(data[keys[index]] != null && index <= 5){
+                field = document.getElementById("viaggio".concat(index+1));
                 field.style.display = "block";
-                field.getElementsByClassName("descrizioneviaggio") = data[keys[index]].title.concat("\n").concat(data[keys[index]].descrizione);
+                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
                 index++;
             }
 
-            while(index <= 6){
-                field = document.getElementById("viaggio".concat(index));
+            while(index <= 5){
+                field = document.getElementById("viaggio".concat(index+1));
                 field.style.display = "none";
                 index++;
             }

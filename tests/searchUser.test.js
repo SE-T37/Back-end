@@ -30,6 +30,15 @@ test('Search user, not authorized',()=>{
 var token= jwt.sign({username: "testUser1"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
+test('Search user, invalid token',()=>{
+    return request(app).get('/searchUser')
+    .set('Accept', 'application/json')
+    .query({
+        token:"invalid token",
+    })
+    .expect(403);
+})
+
 
 test('Search user, no username specified',()=>{
     return request(app).get('/searchUser')

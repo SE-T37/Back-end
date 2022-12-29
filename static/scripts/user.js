@@ -15,27 +15,28 @@ function getUsername() {
 }
 
 function login() {
-    const username = document.getElementById("enterusernamefield").value;
-    const password = document.getElementById("enterpasswordfield").value;
+    const username = document.getElementById("enterusernamefield").value.trim();
+    const password = document.getElementById("enterpasswordfield").value.trim();
 
-    fetch('../../app/controllers/authentication', {
+    fetch('./authenticate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/jason' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             username: username,
             password: password
-        }),
+        })
     })
 
         .then((response) => {
             return response.json();
         })
-
         .then((data) => {
-    if (document.cookie != "")
-            document.cookie = "username=".concat(data.username).concat("; path=/");
-            document.getElementById("usernamefield").innerHTML = data.username;
-        })
+            if (data.success == true){
+                document.cookie = "username=".concat(data.username).concat("; path=/");
+                document.getElementById("usernamefield").innerHTML = data.username;
+                //document.getElementById("avatarsqr").src = data.foto;
+            }
+        })  
 
         .catch(function (error) {
             elem = document.getElementById("popuperror");

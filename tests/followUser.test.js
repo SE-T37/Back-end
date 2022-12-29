@@ -21,7 +21,7 @@ var token= jwt.sign({username: "testUser1",
  id: "63a9efde2ad60959c9f04bc4"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
-/*
+
 test('Follow user, not authorized',()=>{
     console.log("User is not authorized");
     return request(app).put('/followUser')
@@ -65,10 +65,9 @@ test('Follow user, but already following' , ()=>{
 //The solution is mocking
 
 
-*/
 const body3={
     token: token,
-    username: "exp244322"
+    username: "exp"
 }
 
 test('Follow user, not following' , ()=>{    
@@ -85,20 +84,13 @@ test('Follow user, not following' , ()=>{
 })
 
 test('Follow user, not following but connection fail' , ()=>{    
-    const mockIncludes = jest.spyOn(Array.prototype, "includes").mockReturnValue(false);
-    mockIncludes();
-    const mockSave= jest.spyOn(User.prototype, "save").mockImplementation(()=>
-    {
-        throw new Error("Internal server error");
-    });
-    mockSave();
+    const mockSave = jest.fn(()=>{throw new Error('Internal server error')});
+    User.prototype.save = mockSave;
     return request(app).put('/followUser')
     .set('Accept', 'application/json')
     .send(body3)
     .expect(500); 
     
-
-
 })
 
 

@@ -3,7 +3,6 @@ const User = require ('../models/user');
 
 
 const searchViaggio = async function(req, res, next){
-    
     let viaggi = await Viaggio.find({ 
         titolo: { $regex: req.query.titolo , $options: 'i' },     //cerca i viaggi che nel titolo contengono il luogo specificato
         lunghezza: { $gte: req.query.lunghezzaMin, $lte: req.query.lunghezzaMax}     //lunghezzaMin <= lunghezza <= lunghezzaMax

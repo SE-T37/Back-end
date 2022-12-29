@@ -23,11 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //app.use(cors());
 
-app.use('/home', express.static(process.env.FRONTEND || 'static'));
+app.use('/', express.static(process.env.FRONTEND || 'static'));
 // If process.env.FRONTEND folder does not contain index.html then use the one from static
-app.use('/home', express.static('static')); // expose also this folder
+app.use('/', express.static('static')); // expose also this folder
 
-
+app.use('/', express.static('static')); // expose also this folder
 
 
 app.use((req,res,next) => {

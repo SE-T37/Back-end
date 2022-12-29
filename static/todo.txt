@@ -5,8 +5,8 @@ login popUp								OK
 distanze popUp							OK
 login con testuser						OK	
 
-TESTARE LOGIN
-
+TESTARE LOGIN                           OK
+ // cambia il login in testUser1 :=D
 edit profile							
 mettere testtappe						
 gestire utente loggato per ottenere
