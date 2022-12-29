@@ -28,7 +28,7 @@ const newViaggio = (req, res, next) => {
             }
 
             newViaggio.save( (err,data) => {
-                if (err) return res.status(400).json({Error: err});
+                if (err) return res.status(404).json({Error: err});
                 else
                     return res.status(201).json(data);
             })

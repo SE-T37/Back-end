@@ -57,5 +57,5 @@ test('New viaggio, server down or others',()=>{
     return request(app).put('/newViaggio')
     .set('Accept', 'application/json')
     .send(body1)
-    .expect(400);
+    .expect(404);
 })
