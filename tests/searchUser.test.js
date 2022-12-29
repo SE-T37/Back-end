@@ -30,12 +30,32 @@ test('Search user, not authorized',()=>{
 var token= jwt.sign({username: "testUser1", password: "password"}, 
 process.env.SUPER_SECRET, {expiresIn: 86400});
 
-const body1={
-    token: token,
-}
+
 test('Search user, no username specified',()=>{
-    return request(app).post('/searchUser')
+    return request(app).get('/searchUser')
     .set('Accept', 'application/json')
-    .send(body1)
+    .query({
+        token:token,
+    })
     .expect(400);
+})
+
+test('Search user, user not present',()=>{
+    return request(app).get('/searchUser')
+    .set('Accept', 'application/json')
+    .query({
+        token:token,
+        username: "UserNotPresent___!!"
+    })
+    .expect(404);
+})
+
+test('Search user, user  present',()=>{
+    return request(app).get('/searchUser')
+    .set('Accept', 'application/json')
+    .query({
+        token:token,
+        username: "testUser1"
+    })
+    .expect(200);
 })

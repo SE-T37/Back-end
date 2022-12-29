@@ -18,7 +18,11 @@ const seguiUser = async function(req, res, next){
         }
         else{
             user_richiedente.seguiti.push(user_to_follow.username);
-            return res.status(200).json(user_richiedente.seguiti); 
+            try{
+                await user_richiedente.save();
+                return res.status(200).json(user_richiedente.seguiti)
+            }catch(e){return res.status(500).json({message:"Internal server error"})};
+        
         }
     }
 };

@@ -8,7 +8,7 @@ const searchUsers = async function(req, res, next){
     }
     // NB: l'errore 401 è già controllato dal tokenchecker
     let users = await User.find({ username: { $regex: username , $options: 'i' } });
-    if(!users){
+    if(users.length==0){
         return res.status(404).json({message: "User not found"});
     }
     else{

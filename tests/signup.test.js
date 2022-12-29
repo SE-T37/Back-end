@@ -23,6 +23,11 @@ afterAll(() => {
 });    
 
 let number=Math.floor(Math.random()*1000000); // to assure that is not already present;
+// a mock it's better than this approach (that is 
+// actually incorrect because in this way the test could
+// not cover some cases even if the API workd)
+// in all the other test suites and for the last test of this one
+// is used moking
 const body1={
     username: 'User'+ number,
     password: "password123",

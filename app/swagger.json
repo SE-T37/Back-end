@@ -118,7 +118,7 @@
           {
             "name": "username",
             "in": "query",
-            "description": "Data of the new user profile",
+            "description": "Username of the user to search",
             "default": "newUser1",
             "required":true
           },
@@ -232,6 +232,9 @@
           },
           "404":{
             "description": "Not found"
+          },
+          "500":{
+            "description": "Internal Server Error"
           }
         }
       }

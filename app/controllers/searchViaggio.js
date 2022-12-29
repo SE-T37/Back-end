@@ -9,7 +9,7 @@ const searchViaggio = async function(req, res, next){
         lunghezza: { $gte: req.query.lunghezzaMin, $lte: req.query.lunghezzaMax}     //lunghezzaMin <= lunghezza <= lunghezzaMax
     });
 
-    if(!viaggi){
+    if(viaggi.length==0){
         return res.status(404).json({message: "Nessun viaggio trovato"});
     }
     else{
