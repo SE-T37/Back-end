@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nomad.bs</title>
+  <link rel="icon" type="image/x-icon" href="assets/icon.svg">
+</head>
+
+<body id="homelist">
+
+  <script src="scripts/user.js"></script>
+  <link rel="stylesheet" href="styles/home.css">
+
+  <header>
+    <a href="index.html">
+      <img class=nomadbeesheader src="assets/logo.svg">
+    </a>
+
+    <nav class="btnstop">
+      <button type="button" class="btntop" id="btnluoghi" onclick="location.replace('luoghi.html')"><img
+          src="assets/places.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnseguiti" onclick="checkPrivileges('seguiti.html')"><img
+          src="assets/followers.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btncrea" onclick="checkPrivileges('crea.html')"><img
+          src="assets/create.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnprofilo" onclick="location.replace('profilo.html')"><img
+          src="assets/profile.svg" height="40" width="40"></button>
+    </nav>
+
+  </header>
+  <main>
+
+    <section id="home">
+      <h2>Welcome to Nomadbees</h2>
+      <p>Nomadbees is a social platform for travelers to share their experiences, discover new destinations, and connect
+        with like-minded individuals. Whether you're an experienced traveler or just starting out, we have something for
+        everyone.</p>
+    </section>
+    <section id="about">
+      <h2>About Nomadbees</h2>
+      <p>Nomadbees was founded in 2020 with the goal of creating a community of travelers who are passionate about
+        exploring the world. Our platform offers a variety of features, including a destination guide, travel stories,
+        and a social forum where members can connect and share tips and advice.</p>
+    </section>
+    <section id="destinations">
+      <h2>Discover Your Next Destination</h2>
+      <p>Looking for inspiration for your next trip? Browse our destination guide to find out what other travelers have
+        to say about their experiences in different locations around the world. You can also share your own travel
+        stories and photos to help others plan their adventures.</p>
+    </section>
+    <section id="community">
+      <h2>Join the Nomadbees Community</h2>
+      <p>Our community is made up of travelers from all walks of life, with a wide range of interests and experiences.
+        Join us to connect with other like-minded individuals, share your travels, and get advice from experts and
+        seasoned travelers.</p>
+      <p><a href="profilo.html">Sign up now</a> to become a member of the Nomadbees community and start exploring the
+        world
+        with us!</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Copyright Nomadbees 2021</p>
+  </footer>
+
+</body>
+
+</html>

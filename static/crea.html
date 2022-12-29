@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nomad.bs</title>
+  <link rel="icon" type="image/x-icon" href="assets/icon.svg">
+</head>
+
+<body>
+
+  <script src="scripts/user.js"></script>
+  <script src="scripts/maps.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default">
+  </script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=KEY_HERE&libraries=places&v=weekly&callback=initMap">
+  </script>
+  <link rel="stylesheet" href="styles/crea.css">
+
+  <header>
+    <a href="index.html">
+      <img class="nomadbeesheader" src="assets/logo.svg">
+    </a>
+
+    <nav class="btnstop">
+      <button type="button" class="btntop" id="btnluoghi" onclick="location.replace('luoghi.html')"><img
+          src="assets/places.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnseguiti" onclick="checkPrivileges('seguiti.html')"><img
+          src="assets/followers.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btncrea" onclick="checkPrivileges('crea.html')"><img
+          src="assets/create.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnprofilo" onclick="location.replace('profilo.html')"><img
+          src="assets/profile.svg" height="40" width="40"></button>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div id="map" onload="initMap()"></div>
+
+    <div id="tappelist">
+
+      <section class="viaggio" id="tappaselection1" onload="initAutocomp(1)">
+        <div class="tappasearchbar">
+          <input type="text" class="tappasearchbox" id="tappasearchbox1" placeholder="Search location">
+          <button type="button" class="btncercatappa" id="btncercatappa1">⌕</button>
+        </div>
+        <div class="flexbox">
+          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
+          <textarea rows="5" cols="60" class="inputdescrizione" id="inputdescrizione1"
+            placeholder="Insert description"></textarea>
+          <input type="file" class="btnaggiungifoto" id="btnaggiungifoto1" accept="image/*">
+        </div>
+      </section>
+
+      <section class="viaggio" id="tappaselection2" onload="initAutocomp(2)">
+        <div class="tappasearchbar">
+          <input type="text" class="tappasearchbox" id="tappasearchbox2" placeholder="Search location">
+          <button type="button" class="btncercatappa" id="btncercatappa2">⌕</button>
+        </div>
+        <div class="flexbox">
+          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
+          <textarea rows="5" cols="60" class="inputdescrizione" id="inputdescrizione2"
+            placeholder="Insert description"></textarea>
+          <input type="file" class="btnaggiungifoto" id="btnaggiungifoto2" accept="image/*">
+        </div>
+      </section>
+
+      <button id="btnpost">Post!</button>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Copyright Nomadbees 2021</p>
+  </footer>
+
+</body>
+
+</html>

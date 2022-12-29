@@ -453,29 +453,27 @@
       "get":{
         "tags": ["searchViaggio"],
         "summary": "Search a viaggio",
-        "description": "The API permits to search a viaggio. NB: without token it returns 401",
+        "description": "The API permits to search a viaggio",
         "parameters":[{
           "in": "query",
-          "name": "luogo",
+          "name": "titolo",
           "description": "Title of the viaggio",
-          "default": "Trento"
+          "default": "Veneto",
+          "required": "true"
         },
         {
           "in": "query",
           "name": "lunghezzaMin",
           "description": "Minimum legth of the viaggio",
-          "default": "0"
+          "default": "0",
+          "required": "true"
         },
         {
           "in": "query",
           "name": "lunghezzaMax",
           "description": "Maximum legth of the viaggio",
-          "default": "1000"
-        },
-        {
-          "in": "query",
-          "name": "token",
-          "description": "token user that is searching"
+          "default": "1000",
+          "required": "true"
         }
         ],
         "responses":{
