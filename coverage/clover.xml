@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1672311507320" clover="3.2.0">
-  <project timestamp="1672311507320" name="All files">
-    <metrics statements="430" coveredstatements="350" conditionals="30" coveredconditionals="29" methods="8" coveredmethods="5" elements="468" coveredelements="384" complexity="0" loc="430" ncloc="430" packages="4" files="18" classes="18"/>
+<coverage generated="1672322030671" clover="3.2.0">
+  <project timestamp="1672322030671" name="All files">
+    <metrics statements="433" coveredstatements="360" conditionals="33" coveredconditionals="31" methods="8" coveredmethods="6" elements="474" coveredelements="397" complexity="0" loc="433" ncloc="433" packages="4" files="18" classes="18"/>
     <package name="app">
-      <metrics statements="66" coveredstatements="64" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
-      <file name="app.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\app.js">
-        <metrics statements="66" coveredstatements="64" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <metrics statements="65" coveredstatements="63" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <file name="app.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/app.js">
+        <metrics statements="65" coveredstatements="63" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -37,8 +37,8 @@
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="15" type="stmt"/>
-        <line num="33" count="15" type="stmt"/>
+        <line num="32" count="17" type="stmt"/>
+        <line num="33" count="17" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
@@ -57,9 +57,9 @@
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
@@ -71,12 +71,11 @@
         <line num="63" count="1" type="stmt"/>
         <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
       </file>
     </package>
     <package name="app.controllers">
-      <metrics statements="247" coveredstatements="169" conditionals="29" coveredconditionals="28" methods="8" coveredmethods="5"/>
-      <file name="authentication.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\authentication.js">
+      <metrics statements="251" coveredstatements="180" conditionals="32" coveredconditionals="30" methods="8" coveredmethods="6"/>
+      <file name="authentication.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/authentication.js">
         <metrics statements="42" coveredstatements="42" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -121,7 +120,7 @@
         <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
       </file>
-      <file name="edit.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\edit.js">
+      <file name="edit.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/edit.js">
         <metrics statements="14" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -138,7 +137,7 @@
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="search.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\search.js">
+      <file name="search.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/search.js">
         <metrics statements="25" coveredstatements="25" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -166,7 +165,7 @@
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
       </file>
-      <file name="searchViaggio.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\searchViaggio.js">
+      <file name="searchViaggio.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/searchViaggio.js">
         <metrics statements="31" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -200,22 +199,22 @@
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
       </file>
-      <file name="segui.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\segui.js">
-        <metrics statements="26" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="segui.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/segui.js">
+        <metrics statements="30" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
@@ -226,44 +225,48 @@
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
-      <file name="tokenChecker.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\tokenChecker.js">
-        <metrics statements="31" coveredstatements="27" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="tokenChecker.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/tokenChecker.js">
+        <metrics statements="31" coveredstatements="27" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="6" type="cond" truecount="0" falsecount="1"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
-        <line num="26" count="5" type="stmt"/>
-        <line num="27" count="5" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="29" count="5" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
       </file>
-      <file name="user.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\user.js">
+      <file name="user.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/user.js">
         <metrics statements="37" coveredstatements="37" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -303,7 +306,7 @@
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
       </file>
-      <file name="viaggio.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\controllers\viaggio.js">
+      <file name="viaggio.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/controllers/viaggio.js">
         <metrics statements="41" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -350,7 +353,7 @@
     </package>
     <package name="app.models">
       <metrics statements="43" coveredstatements="43" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="user.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\models\user.js">
+      <file name="user.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/models/user.js">
         <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -376,7 +379,7 @@
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="viaggio.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\models\viaggio.js">
+      <file name="viaggio.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/models/viaggio.js">
         <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -402,7 +405,7 @@
     </package>
     <package name="app.routes">
       <metrics statements="74" coveredstatements="74" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="authentication.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\authentication.js">
+      <file name="authentication.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/authentication.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -415,7 +418,7 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="edit.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\edit.js">
+      <file name="edit.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/edit.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -429,7 +432,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="search.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\search.js">
+      <file name="search.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/search.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -443,7 +446,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="searchViaggio.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\searchViaggio.js">
+      <file name="searchViaggio.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/searchViaggio.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -457,7 +460,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="segui.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\segui.js">
+      <file name="segui.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/segui.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -471,7 +474,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="user.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\user.js">
+      <file name="user.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/user.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -483,7 +486,7 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
       </file>
-      <file name="viaggio.js" path="C:\Users\matte\Desktop\Università\Terzo_semestre\Ingegneria_software\Progetto\Back-end\app\routes\viaggio.js">
+      <file name="viaggio.js" path="/home/matteo/UniTn/IngSoftware/SE-T37/Back-end/app/routes/viaggio.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

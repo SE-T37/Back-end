@@ -458,19 +458,22 @@
           "in": "query",
           "name": "titolo",
           "description": "Title of the viaggio",
-          "default": "Veneto"
+          "default": "Veneto",
+          "required": "true"
         },
         {
           "in": "query",
           "name": "lunghezzaMin",
           "description": "Minimum legth of the viaggio",
-          "default": "0"
+          "default": "0",
+          "required": "true"
         },
         {
           "in": "query",
           "name": "lunghezzaMax",
           "description": "Maximum legth of the viaggio",
-          "default": "1000"
+          "default": "1000",
+          "required": "true"
         }
         ],
         "responses":{
