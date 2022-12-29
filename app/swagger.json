@@ -453,7 +453,7 @@
         "description": "The API permits to search a viaggio. NB: without token it returns 401",
         "parameters":[{
           "in": "query",
-          "name": "titolo",
+          "name": "luogo",
           "description": "Title of the viaggio",
           "default": "Trento"
         },
