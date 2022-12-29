@@ -40,7 +40,6 @@ app.use('/searchUser',tokenChecker);  // searchUser/
 app.use('/editUser',tokenChecker);  // editUser/
 app.use('/followUser', tokenChecker); // followUser
 app.use('/newViaggio',tokenChecker); // viaggio
-app.use('/searchViaggio',tokenChecker);  // searchViaggio/
 
 app.use('/searchUser', search);
 app.use('/editUser', edit); 
