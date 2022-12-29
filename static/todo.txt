@@ -1,0 +1,14 @@
+searchviaggi con param nulli			OK
+searchviaggi							OK
+non accedere a crea e seguiti			OK
+login popUp								OK
+distanze popUp							OK
+login con testuser						OK	
+
+TESTARE LOGIN
+
+edit profile							
+mettere testtappe						
+gestire utente loggato per ottenere
+	lista viaggi
+	lista amici

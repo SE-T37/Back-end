@@ -4,26 +4,30 @@
 <head>
   <meta charset="utf-8">
   <title>Nomad.bs</title>
+  <link rel="icon" type="image/x-icon" href="assets/icon.svg">
 </head>
 
 <body>
 
+  <script src="scripts/user.js"></script>
+  <script src="scripts/popUp.js"></script>
+  <script src="scripts/luoghi.js"></script>
   <link rel="stylesheet" href="styles/luoghi.css">
 
   <header>
-    <a href="home.html">
+    <a href="index.html">
       <img class=nomadbeesheader src="assets/logo.svg">
     </a>
 
     <nav class="btnstop">
-      <a href="luoghi.html"><button type="button" class="btntop" id="btnluoghi"><img src="assets/places.svg" height="40"
-            width="40"></button></a>
-      <a href="seguiti.html"><button type="button" class="btntop" id="btnseguiti"><img src="assets/followers.svg"
-            height="40" width="40"></button></a>
-      <a href="crea.html"><button type="button" class="btntop" id="btncrea"><img src="assets/create.svg" height="40"
-            width="40"></button></a>
-      <a href="profilo.html"><button type="button" class="btntop" id="btnprofilo"><img src="assets/profile.svg"
-            height="40" width="40"></button></a>
+      <button type="button" class="btntop" id="btnluoghi" onclick="location.replace('luoghi.html')"><img
+          src="assets/places.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnseguiti" onclick="checkPrivileges('seguiti.html')"><img
+          src="assets/followers.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btncrea" onclick="checkPrivileges('crea.html')"><img
+          src="assets/create.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnprofilo" onclick="location.replace('profilo.html')"><img
+          src="assets/profile.svg" height="40" width="40"></button>
     </nav>
 
   </header>
@@ -31,11 +35,33 @@
 
     <div id="viaggisearchbar">
       <input type="text" id="viaggisearchbox" placeholder="Search your destination">
-      <button type="button" id="btnfiltri">☱</button>
-      <button type="button" id="btncercaviaggio">⌕</button>
+      <button type="button" id="btnfiltri" onclick="popUp('filtri')">☱</button>
+      <button type="button" id="btncercaviaggio" onclick="getViaggi(true)">⌕</button>
     </div>
 
-    <div class="viaggilist">
+    <section id="popupfiltri" class="popup">
+      <button onclick="closePopUp('filtri')" class="btnclosepopup">✖</button>
+      <h1>Edit Profile</h1>
+
+      <div class="popupentry">
+        <button onclick="closePopUp('filtri'); setBounds('walk')" class="btnselezionefiltri">Walk</button>
+      </div>
+
+      <div class="popupentry">
+        <button onclick="closePopUp('filtri'); setBounds('journey')" class="btnselezionefiltri">Journey</button>
+      </div>
+
+      <div class="popupentry">
+        <button onclick="closePopUp('filtri'); setBounds('odyssey')" class="btnselezionefiltri">odyssey</button>
+      </div>
+
+      <div class="popupentry">
+        <button onclick="closePopUp('filtri'); setBounds('all')" class="btnselezionefiltri">All</button>
+      </div>
+
+    </section>
+
+    <div class="viaggilist" onload="setBounds('all'); getViaggi(false)">
 
       <section class="viaggio" id="viaggio1">
         <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
@@ -49,7 +75,7 @@
       </section>
 
       <section class="viaggio" id="viaggio2">
-        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+        <a href="">
           <div class="flexbox">
             <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
             <p class="descrizioneviaggio">
@@ -60,7 +86,7 @@
       </section>
 
       <section class="viaggio" id="viaggio3">
-        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+        <a href="">
           <div class="flexbox">
             <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
             <p class="descrizioneviaggio">
@@ -71,7 +97,7 @@
       </section>
 
       <section class="viaggio" id="viaggio4">
-        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+        <a href="">
           <div class="flexbox">
             <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
             <p class="descrizioneviaggio">
@@ -82,7 +108,7 @@
       </section>
 
       <section class="viaggio" id="viaggio5">
-        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+        <a href="">
           <div class="flexbox">
             <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
             <p class="descrizioneviaggio">
@@ -93,7 +119,7 @@
       </section>
 
       <section class="viaggio" id="viaggio6">
-        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+        <a href="">
           <div class="flexbox">
             <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
             <p class="descrizioneviaggio">

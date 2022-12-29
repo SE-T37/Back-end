@@ -4,33 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>Nomad.bs</title>
+  <link rel="icon" type="image/x-icon" href="assets/icon.svg">
 </head>
 
 <body>
 
+  <script src="scripts/user.js"></script>
   <script src="scripts/maps.js">
   </script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default">
   </script>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=KEY_HERE&libraries=places&v=weekly&callback=initMap">
-    </script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=KEY_HERE&libraries=places&v=weekly&callback=initMap">
+  </script>
   <link rel="stylesheet" href="styles/crea.css">
 
   <header>
-    <a href="home.html">
+    <a href="index.html">
       <img class="nomadbeesheader" src="assets/logo.svg">
     </a>
 
     <nav class="btnstop">
-      <a href="luoghi.html"><button type="button" class="btntop" id="btnluoghi"><img src="assets/places.svg" height="40"
-            width="40"></button></a>
-      <a href="seguiti.html"><button type="button" class="btntop" id="btnseguiti"><img src="assets/followers.svg"
-            height="40" width="40"></button></a>
-      <a href="crea.html"><button type="button" class="btntop" id="btncrea"><img src="assets/create.svg" height="40"
-            width="40"></button></a>
-      <a href="profilo.html"><button type="button" class="btntop" id="btnprofilo"><img src="assets/profile.svg"
-            height="40" width="40"></button></a>
+      <button type="button" class="btntop" id="btnluoghi" onclick="location.replace('luoghi.html')"><img
+          src="assets/places.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnseguiti" onclick="checkPrivileges('seguiti.html')"><img
+          src="assets/followers.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btncrea" onclick="checkPrivileges('crea.html')"><img
+          src="assets/create.svg" height="40" width="40"></button>
+      <button type="button" class="btntop" id="btnprofilo" onclick="location.replace('profilo.html')"><img
+          src="assets/profile.svg" height="40" width="40"></button>
     </nav>
 
   </header>

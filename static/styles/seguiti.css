@@ -164,31 +164,31 @@ section {
     left: 40%;
     right: 40%;
     text-align: center;
-  }
-  
-  .btnclosepopup {
+}
+
+.btnclosepopup {
     float: right;
     border: none;
     border-radius: 50%;
     background-color: #fff;
-  }
-  
-  #followsearchbar {
+}
+
+#followsearchbar {
     display: flex;
     position: relative;
     left: 10%;
-  }
-  
-  #followsearchbox {
+}
+
+#followsearchbox {
     border-top-left-radius: 5px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 0px;
     border: 1px solid #ccc;
     outline: none;
-  }
-  
-  #btncercafollow {
+}
+
+#btncercafollow {
     width: 40px;
     border-top-left-radius: 0px;
     border-top-right-radius: 5px;
@@ -196,22 +196,20 @@ section {
     border-bottom-right-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
-  }
-  
-  #userlist {
+}
+
+#userlist {
     margin-top: 10%;
     height: 90%;
     overflow: scroll;
-  }
-  
-  .userentry {
+}
+
+.userentry {
     display: flex;
     height: 10%;
-  }
-  
-  .usernamesmall {
+}
+
+.usernamesmall {
     color: #121212;
     padding-left: 10%;
-  }
-
-  
+}
