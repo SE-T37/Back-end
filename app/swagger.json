@@ -452,25 +452,25 @@
         "summary": "Search a viaggio",
         "description": "The API permits to search a viaggio. NB: without token it returns 401",
         "parameters":[{
-          "in": "query",
+          "in": "path",
           "name": "titolo",
           "description": "Title of the viaggio",
           "default": "Trento"
         },
         {
-          "in": "query",
+          "in": "path",
           "name": "lunghezzaMin",
           "description": "Minimum legth of the viaggio",
           "default": "0"
         },
         {
-          "in": "query",
+          "in": "path",
           "name": "lunghezzaMax",
           "description": "Maximum legth of the viaggio",
           "default": "1000"
         },
         {
-          "in": "query",
+          "in": "path",
           "name": "token",
           "description": "token user that is searching"
         }

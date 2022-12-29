@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nomad.bs</title>
+</head>
+
+<body>
+
+  <script src="scripts/seguiti.js"></script>
+  <link rel="stylesheet" href="styles/seguiti.css">
+
+  <header>
+    <a href="home.html">
+      <img class=nomadbeesheader src="assets/logo.svg">
+    </a>
+
+    <nav class="btnstop">
+      <a href="luoghi.html"><button type="button" class="btntop" id="btnluoghi"><img src="assets/places.svg" height="40"
+            width="40"></button></a>
+      <a href="seguiti.html"><button type="button" class="btntop" id="btnseguiti"><img src="assets/followers.svg"
+            height="40" width="40"></button></a>
+      <a href="crea.html"><button type="button" class="btntop" id="btncrea"><img src="assets/create.svg" height="40"
+            width="40"></button></a>
+      <a href="profilo.html"><button type="button" class="btntop" id="btnprofilo"><img src="assets/profile.svg"
+            height="40" width="40"></button></a>
+    </nav>
+
+  </header>
+  <main>
+
+    <div class="flexbox" id="pallini">
+      <a href=""> <!--qui dovrebbe portare alla pagina dell utente-->
+        <img src="assets/defUser.svg" alt="Error" class="avatar" height="70" width="70">
+      </a>
+
+      <a href=""> <!--qui dovrebbe portare alla pagina dell utente-->
+        <img src="assets/defUser.svg" alt="Error" class="avatar" height="70" width="70">
+      </a>
+
+      <button onclick="popUp()" id="btnaddfollow">
+        <img src="assets/addUser.svg" class="avatar" height="70" width="70">
+      </button>
+    </div>
+
+    <section class="popup" id="popupfollow">
+      <button onclick="closePopUp()" id="btnclosepopupfollow" class="btnclosepopup">✖</button>
+      <h1>Follow</h1>
+
+      <div id="followsearchbar">
+        <input type="text" id="followsearchbox" placeholder="Search profile">
+        <button type="button" id="btncercafollow">⌕</button>
+      </div>
+
+      <div id="userlist">
+
+        <a href=""> <!--qui dovrebbe portare alla pagina dell utente-->
+          <section class="userentry" id="userentry1">
+            <img id="userpfp1" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username1" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+        <a href="">
+          <section class="userentry" id="userentry2">
+            <img id="userpfp2" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username2" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+        <a href="">
+          <section class="userentry" id="userentry3">
+            <img id="userpfp3" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username3" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+        <a href="">
+          <section class="userentry" id="userentry4">
+            <img id="userpfp4" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username4" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+        <a href="">
+          <section class="userentry" id="userentry5">
+            <img id="userpfp5" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username5" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+        <a href="">
+          <section class="userentry" id="userentry6">
+            <img id="userpfp6" class="avatar" src="assets/defUser.svg" alt="pfp">
+            <p id="username6" class="usernamesmall">
+              Username
+            </p>
+          </section>
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="viaggilist">
+
+      <section class="viaggio" id="viaggio1">
+        <a href=""> <!--qui dovrebbe portare alla pagina dell utente / viaggio-->
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <section class="viaggio" id="viaggio2">
+        <a href="">
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <section class="viaggio" id="viaggio3">
+        <a href="">
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <section class="viaggio" id="viaggio4">
+        <a href="">
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <section class="viaggio" id="viaggio5">
+        <a href="">
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <section class="viaggio" id="viaggio6">
+        <a href="">
+          <div class="flexbox">
+            <img class="roundedimg" src="assets/image.svg" alt="Error" height="120" width="120">
+            <p class="descrizioneviaggio">
+              description
+            </p>
+          </div>
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Copyright Nomadbees 2021</p>
+  </footer>
+
+</body>
+
+</html>
