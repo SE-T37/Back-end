@@ -32,6 +32,7 @@ const authenticate = async function(req, res, next) {
 				message: 'Enjoy your token!',
 				token: token,
 				username: user.username,
+				foto: foto,
 				id: user._id,
 				//self: "authentications/api/" + user._id
 			});
