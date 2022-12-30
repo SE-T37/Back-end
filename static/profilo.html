@@ -33,7 +33,7 @@
   <main>
 
     <div id="profilesection">
-      <img id="avatarsqr" src="assets/defUser.svg"  onload="getUsername()">
+      <img id="avatarsqr" src="assets/defUser.svg">
       <h1 id="usernamefield"></h1>
       <button onclick="popUp('profile')" type="button" id="btnprofile">Edit Profile</button>
       <button onclick="popUp('login')" type="button" id="btnlogin">Log In</button>
@@ -141,12 +141,17 @@
         </a>
       </section>
 
+      <script>
+        getUsername();
+        getFoto();
+        getTravels();
+      </script>
     </div>
 
   </main>
 
   <footer>
-    <p>Copyright Nomadbees 2021</p>
+    <p>Copyright Nomadbees 2022</p>
   </footer>
 
 </body>

@@ -2,7 +2,7 @@ const User = require ('../models/user');
 const Viaggio = require ('../models/viaggio');
 
 const getViaggi = async function(req, res,next) {
-    // ritorna tutti i viaggi di un utente
+    // ritorna tutti i viaggi di un utente, richiede solo il token d'utente
     const user = await User.findOne({username: req.loggedUser.username});
     const viaggi = user.viaggi; // contains only the id of the viaggi but i want the viaggi model
     let resp=[];

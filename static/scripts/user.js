@@ -7,6 +7,24 @@ function checkPrivileges(url) {
         location.replace(url);
 }
 
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+
+
+function getFoto(){
+    const foto=getCookie("foto");
+    if(foto==null || foto === undefined){
+        document.getElementById("avatarsqr").innerHTML ="../assets/defUser.svg";
+    }
+    else{
+        document.getElementById("avatarsqr").src = foto;
+    }
+}
+
 function getUsername() {
     var username = document.cookie.split(';')[0].split('=')[1];
 
@@ -14,6 +32,44 @@ function getUsername() {
         username = "Not Logged In";
 
     document.getElementById("usernamefield").innerHTML = username;
+}
+function getTravels(){
+    const username=getCookie('username');
+    if( username != null || username !== undefined ){
+        const params = new URLSearchParams();
+        params.set('token', getCookie('token'));
+        fetch(`/getViaggi?${params}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json',},
+        })
+        .then((response) => {
+            return response.json();
+        })
+
+        .then((data) => { 
+            const keys = Object.keys(data);
+            var index = 0;
+            var field;
+
+            while(data[keys[index]] != null && index <= 5){
+                field = document.getElementById("myviaggio".concat(index+1));
+                field.style.display = "block";
+                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                index++;
+            }
+
+            while(index <= 5){
+                field = document.getElementById("myviaggio".concat(index+1));
+                field.style.display = "none";
+                index++;
+            }
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    }
 }
 
 function login() {
@@ -35,7 +91,12 @@ function login() {
         .then((data) => {
             if (data.success == true) {
                 document.cookie = "username=".concat(data.username).concat("; path=/");
-                document.getElementById("usernamefield").innerHTML = data.username;
+                document.cookie = "foto=".concat(data.foto).concat("; path=/");
+                document.cookie = "token=".concat(data.token).concat("; path=/");
+                getUsername();
+                getFoto();
+                getTravels();
+                //document.getElementById("usernamefield").innerHTML = data.username;
                 //document.getElementById("avatarsqr").src = data.foto;
             }
         })
