@@ -33,6 +33,7 @@ function getUsername() {
 
     document.getElementById("usernamefield").innerHTML = username;
 }
+
 function getTravels(){
     const username=getCookie('username');
     if( username != null || username !== undefined ){
@@ -157,4 +158,113 @@ function editProfile() {
 
             }
         })
+}
+
+
+// le seguenti funzioni potrebbero essere spostate in un file seguiti.js
+function getSeguiti(){
+    const username=getCookie('username');
+    if( username != null || username !== undefined ){
+        const params = new URLSearchParams();
+        params.set('token', getCookie('token'));
+        fetch(`/getUsers?${params}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json',},
+        })
+        .then((response) => {
+            return response.json();
+        })
+
+        .then((data) => { 
+           //TODO aggiorna le foto circolari ()
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    }
+}
+
+
+function getViaggiAmici(){
+    const username=getCookie('username');
+    if( username != null || username !== undefined ){
+        const params = new URLSearchParams();
+        params.set('token', getCookie('token'));
+        fetch(`/getViaggiAmici?${params}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json',},
+        })
+        .then((response) => {
+            return response.json();
+        })
+
+        .then((data) => { 
+            const keys = Object.keys(data);
+            var index = 0;
+            var field;
+
+            while(data[keys[index]] != null && index <= 5){
+                field = document.getElementById("viaggio".concat(index+1));
+                field.style.display = "block";
+                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                index++;
+            }
+
+            while(index <= 5){
+                field = document.getElementById("viaggio".concat(index+1));
+                field.style.display = "none";
+                index++;
+            }
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    }
+}
+
+
+function searchUsers() {
+
+    const searchTerm = "".concat(document.getElementById("followsearchbox").value);
+    
+    const params = new URLSearchParams();
+    params.set('username', searchTerm);
+
+    fetch(`/searchUsers?${params}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    })
+        .then((response) => {
+            return response.json();
+        })
+
+        .then((data) => { 
+            const keys = Object.keys(data);
+            var index = 0;
+            var field;
+
+            // CONTROLLA DOVE SALVARE I CAMPI DELLA RISPOSTA NELL'HTML
+            /*
+            while(data[keys[index]] != null && index <= 5){
+                field = document.getElementById("userentry".concat(index+1));
+                field.style.display = "block";
+                field.getElementsByClassName("usersmall")[0].innerHTML = data[keys[index]].descrizione;
+                index++;
+            }
+
+            while(index <= 5){
+                field = document.getElementById("userentry".concat(index+1));
+                field.style.display = "none";
+                index++;
+            }
+            */
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
 }

@@ -12,3 +12,8 @@ mettere testtappe
 gestire utente loggato per ottenere
 	lista viaggi
 	lista amici
+
+
+Controllare dove in user.js le funzioni searchUsers e 
+getUsers-> sono chiamate giusto ma bisogna Controllare
+quali elementi della risposta vanno presi e dove vanno messi
