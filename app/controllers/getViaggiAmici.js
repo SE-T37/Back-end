@@ -6,9 +6,9 @@ const getViaggiAmici = async function(req, res,next) {
     let amici= user_richiedente.seguiti;
     let resp;
     for(let i=0;i<amici.length;i++) {
-        amico=User.findOne({username: amici[i]});
+        amico=await User.findOne({username: amici[i]});
         for(let x=0; x<amico.viggi.length; x++) {
-            let viaggiox=Viaggio.findOne({_id: amico.viaggi[x]});
+            let viaggiox=await Viaggio.findOne({_id: amico.viaggi[x]});
             resp.push(viaggiox);
         }
     }
