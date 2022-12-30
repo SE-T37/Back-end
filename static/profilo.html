@@ -37,7 +37,10 @@
       <h1 id="usernamefield"></h1>
       <button onclick="popUp('profile')" type="button" id="btnprofile">Edit Profile</button>
       <button onclick="popUp('login')" type="button" id="btnlogin">Log In</button>
+      <button onclick="logout(); refresh(300)" type="button" id="btnlogout">Log Out</button>
     </div>
+
+    <script>refresh(300)</script>
 
     <section class="popup" id="popupprofile">
       <button onclick="closePopUp('profile')" class="btnclosepopup">✖</button>
@@ -68,7 +71,7 @@
 
       <div class="popupentry">
         <p>Username: </p>
-        <input id="enterusernamefield" class="popupfield" type="text" placeholder="use 'testuser'">
+        <input id="enterusernamefield" class="popupfield" type="text" placeholder="use 'testUser1'">
       </div>
 
       <div class="popupentry">
@@ -76,7 +79,7 @@
         <input id="enterpasswordfield" class="popupfield" type="text" placeholder="use 'password'">
       </div>
 
-      <button onclick="login(); closePopUp('login')" id="btnconfirmlogin">✔</button>
+      <button onclick="login(); closePopUp('login'); refresh(3000)" id="btnconfirmlogin">✔</button>
 
     </section>
     

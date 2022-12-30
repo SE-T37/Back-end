@@ -1,16 +1,18 @@
 function checkPrivileges(url) {
-    if (document.cookie != "")
-        location.replace(url);
-    else
+    const logged = document.cookie.split(';')[0].split('=')[1];
+
+    if (logged == null || logged.length == 0)
         location.replace("profilo.html");
+    else
+        location.replace(url);
 }
 
 function getUsername() {
-    var username;
-    if (document.cookie == "")
+    var username = document.cookie.split(';')[0].split('=')[1];
+
+    if (username == null || username.length == 0)
         username = "Not Logged In";
-    else
-        username = document.cookie.split(';')[0].split('=')[1].trim();
+
     document.getElementById("usernamefield").innerHTML = username;
 }
 
@@ -31,12 +33,12 @@ function login() {
             return response.json();
         })
         .then((data) => {
-            if (data.success == true){
+            if (data.success == true) {
                 document.cookie = "username=".concat(data.username).concat("; path=/");
                 document.getElementById("usernamefield").innerHTML = data.username;
                 //document.getElementById("avatarsqr").src = data.foto;
             }
-        })  
+        })
 
         .catch(function (error) {
             elem = document.getElementById("popuperror");
@@ -44,8 +46,54 @@ function login() {
             elem.getElementsByClassName("errorfield").innerHTML = error;
             console.log(error);
         });
+
 }
 
 function logout() {
-    document.cookie = "";
+    document.cookie = "username=; expires=-1; path=/";
+    document.getElementById("usernamefield").innerHTML = "Not Logged In";
+}
+
+function refresh(time) {
+    setTimeout(refreshAux(), time);
+}
+
+function refreshAux() {
+    const logged = document.cookie.split(';')[0].split('=')[1];
+
+    if (logged == null || logged.length == 0) {
+        document.getElementById("btnlogin").style.display = "block";
+        document.getElementById("btnlogout").style.display = "none";
+        document.getElementById("btnprofile").style.display = "none";
+    }
+    else {
+        document.getElementById("btnlogin").style.display = "none";
+        document.getElementById("btnlogout").style.display = "block";
+        document.getElementById("btnprofile").style.display = "block";
+    }
+}
+
+function editProfile() {
+    const mail = "";
+    const password = "";
+    const foto = "";
+
+    fetch('./editUser', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            mail: mail,
+            password: password,
+            foto: foto
+        })
+    })
+
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            if (data.success == true) {
+
+            }
+        })
 }
