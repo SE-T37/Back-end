@@ -2,17 +2,18 @@ const User = require ('../models/user');
 const Viaggio = require ('../models/viaggio');
 
 const getViaggiAmici = async function(req, res,next) {
-    const user_richiedente= User.findOne({username: req.loggedUser.username})
-    let amici= user_richiedente.seguiti;
-    let resp;
+    const user_richiedente= await User.findOne({username: req.loggedUser.username});
+    const amici= user_richiedente.seguiti;
+    let resp=[];
     for(let i=0;i<amici.length;i++) {
-        amico=await User.findOne({username: amici[i]});
-        for(let x=0; x<amico.viggi.length; x++) {
+        let amico=await User.findOne({username: amici[i]});
+        const viaggiamico= amico.viaggi;
+        for(let x=0; x<viaggiamico.length; x++) {
             let viaggiox=await Viaggio.findOne({_id: amico.viaggi[x]});
             resp.push(viaggiox);
         }
     }
-    return res.json(resp);
+    return res.status(200).json(resp);
 };
 
 module.exports = {getViaggiAmici};

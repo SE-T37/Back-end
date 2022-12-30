@@ -23,7 +23,7 @@ test('New viaggio, not authorized',()=>{
     return request(app).post('/newViaggio')
     .set('Accept', 'application/json')
     .expect(401);
-})
+});
 
 
 var token= jwt.sign({username: "testUser1", id: "63a9efde2ad60959c9f04bc4"}, 
@@ -53,23 +53,25 @@ test('New viaggio, correct', ()=>{
     .send(body1)
     .expect(201);
     
-})
-
-test('New viaggio, server down or others',()=>{
-    mongoose.connection.close(true);
-    return request(app).put('/newViaggio')
-    .set('Accept', 'application/json')
-    .send(body1)
-    .expect(404);
-})
+});
 
 /*
+test('New viaggio, server down or others',()=>{
+    mongoose.connection.close(true);
+    return request(app).post('/newViaggio')
+    .set('Accept', 'application/json')
+    .send(body1)
+    .expect(500);
+});
+
+
 test('New viaggio, save fail' , ()=>{    
     const mockSave = jest.fn(()=>{throw new Error('Internal server error')});
     Viaggio.prototype.save = mockSave;
     return request(app).post('/newViaggio')
     .set('Accept', 'application/json')
     .send(body1)
-    .expect(404); 
-})
+    .expect(500); 
+});
 */
+

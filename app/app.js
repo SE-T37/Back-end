@@ -54,10 +54,11 @@ app.use('/editUser', edit);
 app.use('/followUser', segui);
 app.use('/newViaggio',viaggio);
 app.use('/searchViaggio', searchViaggio);
-app.use('/getUser',getU);
+app.use('/getUsers',getU);
 app.use('/getViaggi',getV);
 app.use('/getViaggiAmici',getVU);
 /* Default 404 handler */
+
 app.use((req, res) => {
     res.status(404);
     res.json({ error: 'Not found' });

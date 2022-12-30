@@ -33,7 +33,7 @@ const newViaggio =async function(req, res, next) {
 
     newViaggio.save( (err,data) => {
         if (err) {
-            return res.status(404).json({Error: err});
+            return res.status(500).json({Error: err});
         }
         else{
             user_richiedente.viaggi.push(newViaggio._id);

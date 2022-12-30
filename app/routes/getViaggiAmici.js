@@ -3,7 +3,7 @@ const multer = require ('multer');
 const upload = multer ();
 const router = express.Router();
 
-const getViaggiAmiciController = require('../controllers/getViaggiAmiciS');
+const getViaggiAmiciController = require('../controllers/getViaggiAmici');
 
 router.get('', upload.none(), getViaggiAmiciController.getViaggiAmici);
 
