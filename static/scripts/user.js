@@ -8,19 +8,19 @@ function checkPrivileges(url) {
 }
 
 function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
 
 
-function getFoto(){
-    const foto=getCookie("foto");
-    if(foto==null || foto === undefined){
-        document.getElementById("avatarsqr").innerHTML ="../assets/defUser.svg";
+function getFoto() {
+    const foto = getCookie("foto");
+    if (foto == null || foto === undefined) {
+        document.getElementById("avatarsqr").innerHTML = "../assets/defUser.svg";
     }
-    else{
+    else {
         document.getElementById("avatarsqr").src = foto;
     }
 }
@@ -34,41 +34,41 @@ function getUsername() {
     document.getElementById("usernamefield").innerHTML = username;
 }
 
-function getTravels(){
-    const username=getCookie('username');
-    if( username != null || username !== undefined ){
+function getTravels() {
+    const username = getCookie('username');
+    if (username != null || username !== undefined) {
         const params = new URLSearchParams();
         params.set('token', getCookie('token'));
         fetch(`/getViaggi?${params}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json',},
+            headers: { 'Content-Type': 'application/json', },
         })
-        .then((response) => {
-            return response.json();
-        })
+            .then((response) => {
+                return response.json();
+            })
 
-        .then((data) => { 
-            const keys = Object.keys(data);
-            var index = 0;
-            var field;
+            .then((data) => {
+                const keys = Object.keys(data);
+                var index = 0;
+                var field;
 
-            while(data[keys[index]] != null && index <= 5){
-                field = document.getElementById("myviaggio".concat(index+1));
-                field.style.display = "block";
-                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
-                index++;
-            }
+                while (data[keys[index]] != null && index <= 5) {
+                    field = document.getElementById("myviaggio".concat(index + 1));
+                    field.style.display = "block";
+                    field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                    index++;
+                }
 
-            while(index <= 5){
-                field = document.getElementById("myviaggio".concat(index+1));
-                field.style.display = "none";
-                index++;
-            }
-        })
+                while (index <= 5) {
+                    field = document.getElementById("myviaggio".concat(index + 1));
+                    field.style.display = "none";
+                    index++;
+                }
+            })
 
-        .catch(function (error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
 
     }
 }
@@ -117,10 +117,10 @@ function login() {
 function logout() {
     location.reload();
     document.getElementById("usernamefield").innerHTML = "Not Logged In";
-    document.getElementById("avatarsqr").innerHTML ="../assets/defUser.svg";
+    document.getElementById("avatarsqr").innerHTML = "../assets/defUser.svg";
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie= "foto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie= "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "foto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 function refresh(time) {
@@ -143,92 +143,98 @@ function refreshAux() {
 }
 
 function editProfile() {
-    const mail = "";
-    const password = "";
-    const foto = "";
+    const mail = document.getElementById("editmailfield").value;
+    const password = document.getElementById("editpasswordfield").value;;
+    const confirm = document.getElementById("confirmeditfield").value;
 
-    fetch('./editUser', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            mail: mail,
-            password: password,
-            foto: foto
-        })
-    })
+    if (confirm == password) {
 
-        .then((response) => {
-            return response.json();
+        fetch('./editUser', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                mail: mail,
+                password: password,
+                foto: getCookie(foto)
+            })
         })
-        .then((data) => {
-            if (data.success == true) {
 
-            }
-        })
+            .catch(function (error) {
+                elem = document.getElementById("popuperror");
+                elem.style.display = 'block';
+                elem.getElementsByClassName("errorfield").innerHTML = error;
+                console.log(error);
+            });
+    }
+
+    else {
+        document.getElementById("errorfield").innerHTML = "Passwords don't Match";
+        document.getElementById("popuperror").style.display = "block";
+    }
 }
 
 
 // le seguenti funzioni potrebbero essere spostate in un file seguiti.js
-function getSeguiti(){
-    const username=getCookie('username');
-    if( username != null || username !== undefined ){
+function getSeguiti() {
+    const username = getCookie('username');
+    if (username != null || username !== undefined) {
         const params = new URLSearchParams();
         params.set('token', getCookie('token'));
         fetch(`/getUsers?${params}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json',},
+            headers: { 'Content-Type': 'application/json', },
         })
-        .then((response) => {
-            return response.json();
-        })
+            .then((response) => {
+                return response.json();
+            })
 
-        .then((data) => { 
-           //TODO aggiorna le foto circolari ()
-        })
+            .then((data) => {
+                //TODO aggiorna le foto circolari ()
+            })
 
-        .catch(function (error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
 
     }
 }
 
 
-function getViaggiAmici(){
-    const username=getCookie('username');
-    if( username != null || username !== undefined ){
+function getViaggiAmici() {
+    const username = getCookie('username');
+    if (username != null || username !== undefined) {
         const params = new URLSearchParams();
         params.set('token', getCookie('token'));
         fetch(`/getViaggiAmici?${params}`, {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json',},
+            headers: { 'Content-Type': 'application/json', },
         })
-        .then((response) => {
-            return response.json();
-        })
+            .then((response) => {
+                return response.json();
+            })
 
-        .then((data) => { 
-            const keys = Object.keys(data);
-            var index = 0;
-            var field;
+            .then((data) => {
+                const keys = Object.keys(data);
+                var index = 0;
+                var field;
 
-            while(data[keys[index]] != null && index <= 5){
-                field = document.getElementById("viaggio".concat(index+1));
-                field.style.display = "block";
-                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
-                index++;
-            }
+                while (data[keys[index]] != null && index <= 5) {
+                    field = document.getElementById("viaggio".concat(index + 1));
+                    field.style.display = "block";
+                    field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                    index++;
+                }
 
-            while(index <= 5){
-                field = document.getElementById("viaggio".concat(index+1));
-                field.style.display = "none";
-                index++;
-            }
-        })
+                while (index <= 5) {
+                    field = document.getElementById("viaggio".concat(index + 1));
+                    field.style.display = "none";
+                    index++;
+                }
+            })
 
-        .catch(function (error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
 
     }
 }
@@ -237,7 +243,7 @@ function getViaggiAmici(){
 function searchUsers() {
 
     const searchTerm = "".concat(document.getElementById("followsearchbox").value);
-    
+
     const params = new URLSearchParams();
     params.set('username', searchTerm);
 
@@ -249,7 +255,7 @@ function searchUsers() {
             return response.json();
         })
 
-        .then((data) => { 
+        .then((data) => {
             const keys = Object.keys(data);
             var index = 0;
             var field;
