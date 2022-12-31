@@ -164,7 +164,17 @@ input[type='file'] {
   background-color: #fff;
 }
 
-.viaggio {
+#btnaddtappa {
+  position: fixed;
+  width: 64px;
+  height: 46px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.tappa {
+  display: none;
   height: 125px;
 }
 
