@@ -11,24 +11,29 @@ function initMap() {
 }
 
 function addTappa() {
-    const tappa = document.getElementsByClassName("tappa");
-    var i = 0;
-    while(tappa[i].style.display != "none")
-        i++;
-    tappa[i].style.display = "block";
+    const tappe = document.getElementsByClassName("tappa");
+    var done = false;
+    var index = 0;
+    while (!done && index < 10) {
+        if (tappe.item(index).style.display == "none") {
+            tappe.item(index).style.display = "block";
+            done = true;
+        }
+        index++;
+    }
 }
 
 
 // Viene fatto un esempio dell'aggiunta di due tappe
 // in questo caso i valori di latitudine e longitudine sono inseriti "manualmente"
 // il funzionamento migliore sarebbe di ottenere latitudine e longitudine tramite la ricerca
-function tappeEsempio(){
-    const viaggio={
+function tappeEsempio() {
+    const viaggio = {
         titolo: "Settimana a New York",
         descrizione: "Quest'estate ho fatto un viaggio a New York e ne sono rimasta incantata"
-        +" La città è davvero emozionante, con i suoi grattacieli che si stagliano in cielo e la vita che pulsa in ogni angolo"
-        +" Ho visitato luoghi iconici come la Statua della Libertà, Central Park e il Metropolitan Museum of Art, e ho anche avuto la"
-        +"fortuna di assistere a uno spettacolo di Broadway. Non vedo l'ora di tornarci in futuro e scoprire ancora di più su questa città così vibrante.",
+            + " La città è davvero emozionante, con i suoi grattacieli che si stagliano in cielo e la vita che pulsa in ogni angolo"
+            + " Ho visitato luoghi iconici come la Statua della Libertà, Central Park e il Metropolitan Museum of Art, e ho anche avuto la"
+            + "fortuna di assistere a uno spettacolo di Broadway. Non vedo l'ora di tornarci in futuro e scoprire ancora di più su questa città così vibrante.",
         foto: "https://images.lonelyplanetitalia.it/static/places/new-york-city-319.jpg?q=90&p=2400%7C1350%7Cmax&s=d0b66f564422dd0d2d51bc78ee7c7dbd",
         lunghezza: 20000,
         foto1: "https://upload.wikimedia.org/wikipedia/commons/0/05/Southwest_corner_of_Central_Park%2C_looking_east%2C_NYC.jpg",
@@ -41,19 +46,21 @@ function tappeEsempio(){
         longitudine2: "-73.978",
     }
 
+    addTappa();
+    addTappa();
     var tappe = document.getElementsByClassName("tappa");
     var input1 = document.getElementsByClassName("inputdescrizione")[0];
+    var input2 = document.getElementsByClassName("inputdescrizione")[1];
 
     var tappa1 = tappe.item(0);
     input1.placeholder = viaggio.descrizione1;
     tappa1.children[1].children[0].src = viaggio.foto1;
 
     var tappa2 = tappe.item(1);
-    var input2 = document.getElementsByClassName("inputdescrizione")[1];
     input2.placeholder = viaggio.descrizione2;
     tappa2.children[1].children[0].src = viaggio.foto2;
 
-    setTimeout(function(){},1000);
+    setTimeout(function () { }, 1000);
     map.setCenter({ lat: +viaggio.latitudine1, lng: +viaggio.longitudine1 });
     marker1 = new google.maps.Marker({
         position: map.getCenter(),
@@ -63,7 +70,7 @@ function tappeEsempio(){
         position: map.getCenter(),
         map: map
     });
-    marker2.setPosition({lat: +viaggio.latitudine2,lng: +viaggio.longitudine2});
+    marker2.setPosition({ lat: +viaggio.latitudine2, lng: +viaggio.longitudine2 });
     // Crea una linea che connette i due marker
     var line = new google.maps.Polyline({
         path: [marker1.getPosition(), marker2.getPosition()],
@@ -71,11 +78,7 @@ function tappeEsempio(){
         strokeOpacity: 1.0,
         strokeWeight: 2
     });
-  
+
     // Aggiungi la linea alla mappa
     line.setMap(map);
-  
-
 }
-
-
