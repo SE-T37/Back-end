@@ -47,8 +47,8 @@
       <h1>Edit Profile</h1>
 
       <div class="popupentry">
-        <p>Username: </p>
-        <input id="editusernamefield" class="editfield" type="text">
+        <p>Mail: </p>
+        <input id="editmailfield" class="editfield" type="text">
       </div>
 
 
@@ -60,7 +60,7 @@
       <div class="popupentry">
         <p>Confirm </p>
         <input id="confirmfield" class="popupfield" type="text">
-        <button onclick="closePopUp('profile')" id="btnconfirmedit">✔</button>
+        <button onclick="editProfile(); closePopUp('profile')" id="btnconfirmedit">✔</button>
       </div>
 
     </section>
@@ -88,7 +88,7 @@
       <h1>Error</h1>
 
       <div class="popupentry">
-        <p class="errorfield"></p>
+        <p class="errorfield">Error</p>
       </div>
 
     </section>

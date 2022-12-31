@@ -97,6 +97,9 @@ function login() {
                 getUsername();
                 getFoto();
                 getTravels();
+                document.getElementById("btnlogin").style.display = "none";
+                document.getElementById("btnlogout").style.display = "block";
+                document.getElementById("btnprofile").style.display = "block";
                 //document.getElementById("usernamefield").innerHTML = data.username;
                 //document.getElementById("avatarsqr").src = data.foto;
             }
@@ -112,8 +115,12 @@ function login() {
 }
 
 function logout() {
-    document.cookie = "username=; expires=-1; path=/";
+    location.reload();
     document.getElementById("usernamefield").innerHTML = "Not Logged In";
+    document.getElementById("avatarsqr").innerHTML ="../assets/defUser.svg";
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie= "foto=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie= "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 function refresh(time) {
