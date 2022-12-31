@@ -50,7 +50,7 @@ function tappeEsempio(){
 
     var tappa2 = tappe.item(1);
     var input2 = document.getElementsByClassName("inputdescrizione")[1];
-    input2.placeholder = viaggio.descrizione1;
+    input2.placeholder = viaggio.descrizione2;
     tappa2.children[1].children[0].src = viaggio.foto2;
 
     setTimeout(function(){},1000);
