@@ -176,7 +176,9 @@
     </div>
 
     <script>
-      initMap();
+      try{
+        initMap();
+      }catch(e){console.log("Error during the map loading")};
       tappeEsempio();
     </script>
 

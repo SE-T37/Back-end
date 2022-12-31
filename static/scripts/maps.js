@@ -10,24 +10,12 @@ function initMap() {
     map = new google.maps.Map(docelement, attributes);
 }
 
-function addTappa() {
-    const tappe = document.getElementsByClassName("tappa");
-    var done = false;
-    var index = 0;
-    while (!done && index < 10) {
-        if (tappe.item(index).style.display == "none") {
-            tappe.item(index).style.display = "block";
-            done = true;
-        }
-        index++;
-    }
-}
-
 
 // Viene fatto un esempio dell'aggiunta di due tappe
 // in questo caso i valori di latitudine e longitudine sono inseriti "manualmente"
 // il funzionamento migliore sarebbe di ottenere latitudine e longitudine tramite la ricerca
 function tappeEsempio() {
+    setTimeout(function () { }, 1000);
     const viaggio = {
         titolo: "Settimana a New York",
         descrizione: "Quest'estate ho fatto un viaggio a New York e ne sono rimasta incantata"
@@ -46,8 +34,13 @@ function tappeEsempio() {
         longitudine2: "-73.978",
     }
 
-    addTappa();
-    addTappa();
+    var set= document.getElementById("inputviaggiotitle");
+    set.placeholder = "Viaggio a New York";
+
+    var set2= document.getElementById("inputdescrizioneviaggio");
+    set2.placeholder = "Ho trascorso una settimana a New York con la mia"+
+    "famiglia, abbiamo trovato un clima stupendo e ci siamo divertiti molto!";
+
     var tappe = document.getElementsByClassName("tappa");
     var input1 = document.getElementsByClassName("inputdescrizione")[0];
     var input2 = document.getElementsByClassName("inputdescrizione")[1];
@@ -59,26 +52,82 @@ function tappeEsempio() {
     var tappa2 = tappe.item(1);
     input2.placeholder = viaggio.descrizione2;
     tappa2.children[1].children[0].src = viaggio.foto2;
+    try{
+        map.setCenter({ lat: +viaggio.latitudine1, lng: +viaggio.longitudine1 });
+        marker1 = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map
+        });
+        marker2 = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map
+        });
+        marker2.setPosition({ lat: +viaggio.latitudine2, lng: +viaggio.longitudine2 });
+        // Crea una linea che connette i due marker
+        var line = new google.maps.Polyline({
+            path: [marker1.getPosition(), marker2.getPosition()],
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        });
 
-    setTimeout(function () { }, 1000);
-    map.setCenter({ lat: +viaggio.latitudine1, lng: +viaggio.longitudine1 });
-    marker1 = new google.maps.Marker({
-        position: map.getCenter(),
-        map: map
-    });
-    marker2 = new google.maps.Marker({
-        position: map.getCenter(),
-        map: map
-    });
-    marker2.setPosition({ lat: +viaggio.latitudine2, lng: +viaggio.longitudine2 });
-    // Crea una linea che connette i due marker
-    var line = new google.maps.Polyline({
-        path: [marker1.getPosition(), marker2.getPosition()],
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-    });
+        // Aggiungi la linea alla mappa
+        line.setMap(map);
+    }catch(e){console.log("Error during map operations")}
+}
 
-    // Aggiungi la linea alla mappa
-    line.setMap(map);
+
+function addTappa() {
+    const tappelist = document.getElementById("tappelist");
+  
+    const newTappa = document.createElement("section");
+    newTappa.className = "tappa";
+  
+    const tappasearchbar = document.createElement("div");
+    tappasearchbar.className = "tappasearchbar";
+    newTappa.appendChild(tappasearchbar);
+  
+    
+    const tappasearchbox = document.createElement("input");
+    tappasearchbox.type = "text";
+    tappasearchbox.className = "tappasearchbox";
+    tappasearchbox.placeholder = "Search location";
+    tappasearchbar.appendChild(tappasearchbox);
+  
+    const btncercatappa = document.createElement("button");
+    btncercatappa.type = "button";
+    btncercatappa.className = "btncercatappa";
+    btncercatappa.innerText = "⌕";
+    tappasearchbar.appendChild(btncercatappa);
+  
+    
+    const flexbox = document.createElement("div");
+    flexbox.className = "flexbox";
+    newTappa.appendChild(flexbox);
+  
+    const image = document.createElement("img");
+    image.id = "image1";
+    image.className = "roundedimg";
+    image.src = "assets/image.svg";
+    image.alt = "Error";
+    image.height = "100";
+    image.width = "100";
+    flexbox.appendChild(image);
+  
+   
+    const inputdescrizione = document.createElement("textarea");
+    inputdescrizione.rows = "5";
+    inputdescrizione.cols = "60";
+    inputdescrizione.className = "inputdescrizione";
+    inputdescrizione.placeholder = "Insert description";
+    flexbox.appendChild(inputdescrizione);
+  
+    
+    const btnaggiungifoto = document.createElement("input");
+    btnaggiungifoto.type = "file";
+    btnaggiungifoto.className = "btnaggiungifoto";
+    btnaggiungifoto.accept = "image/*";
+    flexbox.appendChild(btnaggiungifoto);
+
+    tappelist.appendChild(newTappa);
 }

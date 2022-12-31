@@ -49,11 +49,25 @@ function getViaggi(custom) {
             const keys = Object.keys(data);
             var index = 0;
             var field;
+            //console.log(data);
 
             while(data[keys[index]] != null && index <= 5){
                 field = document.getElementById("viaggio".concat(index+1));
                 field.style.display = "block";
                 field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                const foto=[data[keys[index]]][0].foto;
+                if(foto != null && foto !==undefined){
+                    try{
+                        const imageElements = document.getElementsByClassName("roundedimg");
+                        const firstImageElement = imageElements[index];
+                        firstImageElement.src = foto;
+                    }catch(e){
+                        const imageElements = document.getElementsByClassName("roundedimg");
+                        const firstImageElement = imageElements[index];
+                        firstImageElement.src = "../assets/image.svg";
+                    }
+                }
+                
                 index++;
             }
 
