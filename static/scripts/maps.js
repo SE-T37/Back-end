@@ -1,4 +1,4 @@
-let map;
+var map;
 function initMap() {
 
     var docelement = document.getElementById('map');
@@ -17,6 +17,11 @@ function addTappa() {
         i++;
     tappa[i].style.display = "block";
 }
+
+
+// Viene fatto un esempio dell'aggiunta di due tappe
+// in questo caso i valori di latitudine e longitudine sono inseriti "manualmente"
+// il funzionamento migliore sarebbe di ottenere latitudine e longitudine tramite la ricerca
 function tappeEsempio(){
     const viaggio={
         titolo: "Settimana a New York",
@@ -35,9 +40,42 @@ function tappeEsempio(){
         latitudine2: "40.761",
         longitudine2: "-73.978",
     }
-        field="tappeselection1";
-        field.style.display = "block";
-        field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
-        index++;
+
+    var tappe = document.getElementsByClassName("tappa");
+    var input1 = document.getElementsByClassName("inputdescrizione")[0];
+
+    var tappa1 = tappe.item(0);
+    input1.placeholder = viaggio.descrizione1;
+    tappa1.children[1].children[0].src = viaggio.foto1;
+
+    var tappa2 = tappe.item(1);
+    var input2 = document.getElementsByClassName("inputdescrizione")[1];
+    input2.placeholder = viaggio.descrizione1;
+    tappa2.children[1].children[0].src = viaggio.foto2;
+
+    setTimeout(function(){},1000);
+    map.setCenter({ lat: +viaggio.latitudine1, lng: +viaggio.longitudine1 });
+    marker1 = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map
+    });
+    marker2 = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map
+    });
+    marker2.setPosition({lat: +viaggio.latitudine2,lng: +viaggio.longitudine2});
+    // Crea una linea che connette i due marker
+    var line = new google.maps.Polyline({
+        path: [marker1.getPosition(), marker2.getPosition()],
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+  
+    // Aggiungi la linea alla mappa
+    line.setMap(map);
+  
+
 }
+
 
