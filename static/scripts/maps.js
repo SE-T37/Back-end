@@ -16,6 +16,7 @@ function initMap() {
 // il funzionamento migliore sarebbe di ottenere latitudine e longitudine tramite la ricerca
 function tappeEsempio() {
     setTimeout(function () { }, 1000);
+    addTappa(); addTappa();
     const viaggio = {
         titolo: "Settimana a New York",
         descrizione: "Quest'estate ho fatto un viaggio a New York e ne sono rimasta incantata"

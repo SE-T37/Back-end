@@ -103,6 +103,12 @@ function login() {
                 //document.getElementById("usernamefield").innerHTML = data.username;
                 //document.getElementById("avatarsqr").src = data.foto;
             }
+            else {
+                elem = document.getElementById("popuperror");
+                elem.style.display = 'block';
+                elem.getElementsByClassName("errorfield").innerHTML = error;
+                console.log(error);
+            }
         })
 
         .catch(function (error) {
@@ -222,14 +228,14 @@ function getViaggiAmici() {
                     field = document.getElementById("viaggio".concat(index + 1));
                     field.style.display = "block";
                     field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
-                    const foto=[data[keys[index]]][0].foto;
+                    const foto = [data[keys[index]]][0].foto;
                     //console.log(foto);
-                    if(foto != null && foto !==undefined){
-                        try{
+                    if (foto != null && foto !== undefined) {
+                        try {
                             const imageElements = document.getElementsByClassName("roundedimg");
                             const firstImageElement = imageElements[index];
                             firstImageElement.src = foto;
-                        }catch(e){
+                        } catch (e) {
                             const imageElements = document.getElementsByClassName("roundedimg");
                             const firstImageElement = imageElements[index];
                             firstImageElement.src = "../assets/image.svg";

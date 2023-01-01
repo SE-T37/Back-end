@@ -47,138 +47,19 @@
       <textarea rows="5" cols="60" id="inputdescrizioneviaggio" placeholder="Insert description"></textarea>
     </div>
 
-    <div id="tappelist">
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-      <section class="tappa">
-        <div class="tappasearchbar">
-          <input type="text" class="tappasearchbox" placeholder="Search location">
-          <button type="button" class="btncercatappa">⌕</button>
-        </div>
-        <div class="flexbox">
-          <img id="image1" class="roundedimg" src="assets/image.svg" alt="Error" height="100" width="100">
-          <textarea rows="5" cols="60" class="inputdescrizione" placeholder="Insert description"></textarea>
-          <input type="file" class="btnaggiungifoto" accept="image/*">
-        </div>
-      </section>
-
-
+    <div class="flexbox">
       <button id="btnaddtappa" onclick="addTappa()">Add</button>
       <button id="btnpost">Post!</button>
-
+    </div>
+    
+    <div id="tappelist">
+      
     </div>
 
     <script>
-      try{
+      try {
         initMap();
-      }catch(e){console.log("Error during the map loading")};
+      } catch (e) { console.log("Error during the map loading") };
       tappeEsempio();
     </script>
 
