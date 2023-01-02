@@ -151,12 +151,11 @@ section {
 }
 
 .avatarsmall {
+    height: 36px;
+    width: 36px;
     border-radius: 50%;
     border: 1px solid #ccc;
     margin: 5px;
-    -moz-box-shadow: 3px 3px 3px #ccc;
-    -webkit-box-shadow: 3px 3px 3px #ccc;
-    box-shadow: 3px 3px 3px #ccc;
 }
 
 #btnaddfollow {
@@ -226,7 +225,6 @@ section {
 
 .userentry {
     display: flex;
-    height: 10%;
 }
 
 .usernamesmall {
