@@ -269,7 +269,7 @@ function generateUserEntry(userUsername, userFoto) {
     userEntry.classList.add("userentry");
 
     const avatar = document.createElement("img");
-    avatar.classList.add("avatar");
+    avatar.classList.add("avatarsmall");
     
     if (userFoto!=null && userFoto !== undefined && userFoto.length > 10) {
         avatar.src = userFoto;
