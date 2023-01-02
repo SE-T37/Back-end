@@ -1,6 +1,9 @@
+// dichiara la mappa, inizializza il numero di tappe mostrate ad 1
 var map;
 var numTappe = 1;
 
+
+// inizializza la mappa
 function initMap() {
 
     var docelement = document.getElementById('map');
@@ -37,12 +40,12 @@ function tappeEsempio() {
         longitudine2: "-73.978",
     }
 
-    var set= document.getElementById("inputviaggiotitle");
+    var set = document.getElementById("inputviaggiotitle");
     set.placeholder = "Viaggio a New York";
 
-    var set2= document.getElementById("inputdescrizioneviaggio");
-    set2.placeholder = "Ho trascorso una settimana a New York con la mia"+
-    "famiglia, abbiamo trovato un clima stupendo e ci siamo divertiti molto!";
+    var set2 = document.getElementById("inputdescrizioneviaggio");
+    set2.placeholder = "Ho trascorso una settimana a New York con la mia" +
+        "famiglia, abbiamo trovato un clima stupendo e ci siamo divertiti molto!";
 
     var tappe = document.getElementsByClassName("tappa");
     var input1 = document.getElementsByClassName("inputdescrizione")[0];
@@ -55,7 +58,7 @@ function tappeEsempio() {
     var tappa2 = tappe.item(1);
     input2.placeholder = viaggio.descrizione2;
     tappa2.children[1].children[0].src = viaggio.foto2;
-    try{
+    try {
         map.setCenter({ lat: +viaggio.latitudine1, lng: +viaggio.longitudine1 });
         marker1 = new google.maps.Marker({
             position: map.getCenter(),
@@ -76,65 +79,57 @@ function tappeEsempio() {
 
         // Aggiungi la linea alla mappa
         line.setMap(map);
-    }catch(e){console.log("Error during map operations")}
+    } catch (e) { console.log("Error during map operations") }
 }
 
 
+// aggiunge una scheda alla lista di tappe
 function addTappa() {
 
-    if(numTappe != 10){
-    const tappelist = document.getElementById("tappelist");
-  
-    const newTappa = document.createElement("section");
-    newTappa.className = "tappa";
-  
-    const tappasearchbar = document.createElement("div");
-    tappasearchbar.className = "tappasearchbar";
-    newTappa.appendChild(tappasearchbar);
-  
-    
-    const tappasearchbox = document.createElement("input");
-    tappasearchbox.type = "text";
-    tappasearchbox.className = "tappasearchbox";
-    tappasearchbox.placeholder = "Search location";
-    tappasearchbar.appendChild(tappasearchbox);
-  
-    const btncercatappa = document.createElement("button");
-    btncercatappa.type = "button";
-    btncercatappa.className = "btncercatappa";
-    btncercatappa.innerText = "⌕";
-    tappasearchbar.appendChild(btncercatappa);
-  
-    
-    const flexbox = document.createElement("div");
-    flexbox.className = "flexbox";
-    newTappa.appendChild(flexbox);
-  
-    const image = document.createElement("img");
-    image.id = "image1";
-    image.className = "roundedimg";
-    image.src = "assets/image.svg";
-    image.alt = "Error";
-    image.height = "100";
-    image.width = "100";
-    flexbox.appendChild(image);
-  
-   
-    const inputdescrizione = document.createElement("textarea");
-    inputdescrizione.rows = "5";
-    inputdescrizione.cols = "60";
-    inputdescrizione.className = "inputdescrizione";
-    inputdescrizione.placeholder = "Insert description";
-    flexbox.appendChild(inputdescrizione);
-  
-    
-    const btnaggiungifoto = document.createElement("input");
-    btnaggiungifoto.type = "file";
-    btnaggiungifoto.className = "btnaggiungifoto";
-    btnaggiungifoto.accept = "image/*";
-    flexbox.appendChild(btnaggiungifoto);
+    // controlla che il limite di tappe per viaggio non
+    // sia stato raggiunto
+    if (numTappe != 10) {
 
-    tappelist.appendChild(newTappa);
-    numTappe++;
+        // crea l'elemento HTML nel documento
+        const tappelist = document.getElementById("tappelist");
+        const newTappa = document.createElement("section");
+        newTappa.className = "tappa";
+        const tappasearchbar = document.createElement("div");
+        tappasearchbar.className = "tappasearchbar";
+        newTappa.appendChild(tappasearchbar);
+        const tappasearchbox = document.createElement("input");
+        tappasearchbox.type = "text";
+        tappasearchbox.className = "tappasearchbox";
+        tappasearchbox.placeholder = "Search location";
+        tappasearchbar.appendChild(tappasearchbox);
+        const btncercatappa = document.createElement("button");
+        btncercatappa.type = "button";
+        btncercatappa.className = "btncercatappa";
+        btncercatappa.innerText = "⌕";
+        tappasearchbar.appendChild(btncercatappa);
+        const flexbox = document.createElement("div");
+        flexbox.className = "flexbox";
+        newTappa.appendChild(flexbox);
+        const image = document.createElement("img");
+        image.id = "image1";
+        image.className = "roundedimg";
+        image.src = "assets/image.svg";
+        image.alt = "Error";
+        image.height = "100";
+        image.width = "100";
+        flexbox.appendChild(image);
+        const inputdescrizione = document.createElement("textarea");
+        inputdescrizione.rows = "5";
+        inputdescrizione.cols = "60";
+        inputdescrizione.className = "inputdescrizione";
+        inputdescrizione.placeholder = "Insert description";
+        flexbox.appendChild(inputdescrizione);
+        const btnaggiungifoto = document.createElement("input");
+        btnaggiungifoto.type = "file";
+        btnaggiungifoto.className = "btnaggiungifoto";
+        btnaggiungifoto.accept = "image/*";
+        flexbox.appendChild(btnaggiungifoto);
+        tappelist.appendChild(newTappa);
+        numTappe++;
     }
 }
