@@ -151,19 +151,22 @@ function refreshAux() {
 }
 
 function editProfile() {
-    const mail = document.getElementById("editmailfield").value;
-    const password = document.getElementById("editpasswordfield").value;;
-    const confirm = document.getElementById("confirmeditfield").value;
+    const mail_H = document.getElementById("editmailfield").value;
+    const password_H = document.getElementById("editpasswordfield").value;
+    const foto_H = document.getElementById("editfotofield").value;
+    const confirm_H = document.getElementById("confirmfield").value;
 
-    if (confirm == password) {
+
+    if (confirm_H == password_H) {
 
         fetch('./editUser', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                mail: mail,
-                password: password,
-                foto: getCookie(foto)
+                token: getCookie("token"),
+                mail: mail_H,
+                password: password_H,
+                foto: foto_H
             })
         })
 

@@ -204,7 +204,7 @@ section {
   display: none;
   position: fixed;
   top: 15%;
-  bottom: 25%;
+  bottom: 10%;
   left: 40%;
   right: 40%;
   text-align: center;
@@ -248,5 +248,5 @@ section {
   border-radius: 5px;
   outline: none;
   height: 20px;
-  width: 50%;
+  width: 75%;
 }
