@@ -8,7 +8,7 @@ function initMap() {
 
     var docelement = document.getElementById('map');
     var attributes = {
-        center: { lat: 46.074779, lng: 11.121749 },
+        center: { lat: 40.782, lng: -73.965 },
         zoom: 12,
         disableDefaultUI: true
     }
