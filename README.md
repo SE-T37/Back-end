@@ -1,21 +1,18 @@
 # Back-end
-Back-end files of the project, now with slightly more Front-end
 
+**Run info: **
 
-Nel branch user-mod ci sono le api dell'utente e un esempio di SITO. 
-Nel branch viaggi-api ci sono le api del viaggio
+>create a .env file with the following credentials:
 
+SUPER_SECRET='NomadBees-Key'
+DB_HOST=localhost
+DB_USER=nomadbees
+DB_PASS=IGWcyG7y372jOu14
+PORT = 8080
+MONGODB_URI="mongodb+srv://nomadbees:IGWcyG7y372jOu14@cluster0.r7axnea.mongodb.net/NomadBeesDB"
 
-API DIAGRAM:
-
-https://lucid.app/lucidchart/da2fd114-1995-4589-aa5e-eb01bdb5fffb/edit?invitationId=inv_4ab70b7e-ba32-40cf-92f7-22672c67b2d0&page=pLNehgACvINR#
-
-npm start
+> Then run in the terminal with: npm start
+> Connect to https://localhost:8080
 
 
 **nb the .env file is not uploaded**
-
-
-Postman usage:
-node app/server.js
-https://localhost:8080/user
