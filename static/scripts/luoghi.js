@@ -57,7 +57,9 @@ function getViaggi(custom) {
             while (data[keys[index]] != null && index <= 5) {
                 field = document.getElementById("viaggio".concat(index + 1));
                 field.style.display = "block";
-                field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                let text= data[keys[index]].titolo;
+                text+=":            ";
+                text+= data[keys[index]].descrizione;
                 const foto = [data[keys[index]]][0].foto;
 
                 // mostra l'immagine di default dove non presente una
