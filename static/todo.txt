@@ -1,19 +1,5 @@
-searchviaggi con param nulli			OK
-searchviaggi							OK
-non accedere a crea e seguiti			OK
-login popUp								OK
-distanze popUp							OK
-login con testuser						OK	
-
-TESTARE LOGIN                           OK
- // cambia il login in testUser1 :=D	OK
-edit profile							
-mettere testtappe						
-gestire utente loggato per ottenere
-	lista viaggi
-	lista amici
-
-
-Controllare dove in user.js le funzioni searchUsers e 
-getUsers-> sono chiamate giusto ma bisogna Controllare
-quali elementi della risposta vanno presi e dove vanno messi
+edit profile user.js  ----> Matteo B
+max 10 tappe in crea.html mappa.js----> Riccardo 
+search utenti.html user.js ----> Matteo B
+foto profilo.html ---> Riccardo 
+colora pallini ---> RIccardo

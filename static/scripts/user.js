@@ -195,7 +195,12 @@ function getSeguiti() {
             })
 
             .then((data) => {
-                //TODO aggiorna le foto circolari ()
+                const pallini = document.getElementById('pallini');
+                const avatars = pallini.getElementsByClassName('avatar');  
+                for (let i = 0; i < avatars.length-1; i++) {
+                  
+                  avatars[i].src =data[i].foto;
+                }
             })
 
             .catch(function (error) {
@@ -265,8 +270,9 @@ function searchUsers() {
 
     const params = new URLSearchParams();
     params.set('username', searchTerm);
+    params.set('token', getCookie('token'));
 
-    fetch(`/searchUsers?${params}`, {
+    fetch(`./searchUser?${params}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     })
@@ -278,13 +284,11 @@ function searchUsers() {
             const keys = Object.keys(data);
             var index = 0;
             var field;
-
-            // CONTROLLA DOVE SALVARE I CAMPI DELLA RISPOSTA NELL'HTML
-            /*
+            console.log(data);
             while(data[keys[index]] != null && index <= 5){
                 field = document.getElementById("userentry".concat(index+1));
                 field.style.display = "block";
-                field.getElementsByClassName("usersmall")[0].innerHTML = data[keys[index]].descrizione;
+                field.getElementsByClassName("usernamesmall")[0].innerHTML = data[keys[index]].usernmae;
                 index++;
             }
 
@@ -293,7 +297,6 @@ function searchUsers() {
                 field.style.display = "none";
                 index++;
             }
-            */
         })
 
         .catch(function (error) {
