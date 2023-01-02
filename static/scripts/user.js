@@ -157,7 +157,7 @@ function editProfile() {
     const confirm_H = document.getElementById("confirmfield").value;
 
 
-    if (confirm_H == password_H) {
+    if (confirm_H == password_H && confirm_H !=null && confirm_H !== undefined && confirm_H.trim().length>0) {
 
         fetch('./editUser', {
             method: 'PUT',
@@ -201,10 +201,14 @@ function getSeguiti() {
 
             .then((data) => {
                 const pallini = document.getElementById('pallini');
-                const avatars = pallini.getElementsByClassName('avatar');  
+                const avatars = pallini.getElementsByClassName('avatar');
+                
                 for (let i = 0; i < avatars.length-1; i++) {
-                  
-                  avatars[i].src =data[i].foto;
+                    let userFoto= data[i].foto
+                    if (userFoto==null || userFoto === undefined || userFoto.length < 10) {
+                        userFoto = "assets/defUser.svg";  
+                    }
+                    avatars[i].src =userFoto;
                 }
             })
 
