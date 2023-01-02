@@ -57,6 +57,7 @@ function getTravels() {
                     field = document.getElementById("myviaggio".concat(index + 1));
                     field.style.display = "block";
                     field.getElementsByClassName("descrizioneviaggio")[0].innerHTML = data[keys[index]].descrizione;
+                    field.getElementsByClassName("roundedimg")[0].src = data[keys[index]].foto;
                     index++;
                 }
 

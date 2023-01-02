@@ -101,6 +101,9 @@ footer {
 
 .viaggio {
     height: 125px;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
 }
 
 section {
@@ -137,9 +140,23 @@ section {
 }
 
 .avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 3px solid #e09112;
+    margin: 5px;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+.avatarsmall {
     border-radius: 50%;
     border: 1px solid #ccc;
     margin: 5px;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
 }
 
 #btnaddfollow {
@@ -164,6 +181,9 @@ section {
     left: 40%;
     right: 40%;
     text-align: center;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
 }
 
 .btnclosepopup {
@@ -200,7 +220,7 @@ section {
 
 #userlist {
     margin-top: 10%;
-    height: 90%;
+    height: 70%;
     overflow: scroll;
 }
 

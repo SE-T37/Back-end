@@ -102,6 +102,9 @@ footer {
 .viaggio {
   display: none;
   height: 125px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 section {
@@ -126,6 +129,9 @@ section {
   margin-right: auto;
   width: 60%;
   border-radius: 10px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 #profilesection {
@@ -145,6 +151,9 @@ section {
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 #btnlogin {
@@ -155,6 +164,9 @@ section {
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 #btnlogout {
@@ -165,6 +177,9 @@ section {
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 .flexbox {
@@ -193,6 +208,9 @@ section {
   left: 40%;
   right: 40%;
   text-align: center;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 .btnclosepopup {

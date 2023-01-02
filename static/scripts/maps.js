@@ -1,4 +1,6 @@
 var map;
+var numTappe = 1;
+
 function initMap() {
 
     var docelement = document.getElementById('map');
@@ -15,8 +17,8 @@ function initMap() {
 // in questo caso i valori di latitudine e longitudine sono inseriti "manualmente"
 // il funzionamento migliore sarebbe di ottenere latitudine e longitudine tramite la ricerca
 function tappeEsempio() {
+    addTappa();
     setTimeout(function () { }, 1000);
-    addTappa(); addTappa();
     const viaggio = {
         titolo: "Settimana a New York",
         descrizione: "Quest'estate ho fatto un viaggio a New York e ne sono rimasta incantata"
@@ -79,6 +81,8 @@ function tappeEsempio() {
 
 
 function addTappa() {
+
+    if(numTappe != 10){
     const tappelist = document.getElementById("tappelist");
   
     const newTappa = document.createElement("section");
@@ -131,4 +135,6 @@ function addTappa() {
     flexbox.appendChild(btnaggiungifoto);
 
     tappelist.appendChild(newTappa);
+    numTappe++;
+    }
 }
