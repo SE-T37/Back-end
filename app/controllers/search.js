@@ -14,8 +14,8 @@ const searchUsers = async function(req, res, next){
     else{
         users = users.map((user) => {
             return {
-                //self: '/' + user.username,
-                username: user.username
+                username: user.username,
+                foto: user.foto
             };
         });
         return res.status(200).json(users);

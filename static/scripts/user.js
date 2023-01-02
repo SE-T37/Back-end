@@ -34,6 +34,7 @@ function getUsername() {
     document.getElementById("usernamefield").innerHTML = username;
 }
 
+
 function getTravels() {
     const username = getCookie('username');
     if (username != null || username !== undefined) {
@@ -71,7 +72,7 @@ function getTravels() {
             });
 
     }
-}
+};
 
 function login() {
     const username = document.getElementById("enterusernamefield").value.trim();
@@ -131,7 +132,7 @@ function logout() {
 
 function refresh(time) {
     setTimeout(refreshAux(), time);
-}
+};
 
 function refreshAux() {
     const logged = document.cookie.split(';')[0].split('=')[1];
@@ -262,6 +263,42 @@ function getViaggiAmici() {
 
     }
 }
+function generateUserEntry(userUsername, userFoto) {
+    const userEntry = document.createElement("section");
+    userEntry.classList.add("userentry");
+
+    const avatar = document.createElement("img");
+    avatar.classList.add("avatar");
+    
+    if (userFoto!=null && userFoto !== undefined && userFoto.length > 10) {
+        avatar.src = userFoto;
+    }
+    else{
+        avatar.src = "assets/defUser.svg";  
+    }
+
+    avatar.alt = "pfp";
+  
+    const username = document.createElement("p");
+    username.classList.add("usernamesmall");
+    username.textContent = userUsername;
+
+    userEntry.appendChild(avatar);
+    userEntry.appendChild(username);
+  
+ 
+    return userEntry;
+}
+  
+function deleteUserEntries() {
+    const userEntries = document.querySelectorAll(".userentry");
+    if (userEntries.length > 0) {
+      for (const userEntry of userEntries) {
+        userEntry.remove();
+      }
+    }
+  }
+  
 
 
 function searchUsers() {
@@ -284,22 +321,16 @@ function searchUsers() {
             const keys = Object.keys(data);
             var index = 0;
             var field;
-            console.log(data);
+            deleteUserEntries();
             while(data[keys[index]] != null && index <= 5){
-                field = document.getElementById("userentry".concat(index+1));
-                field.style.display = "block";
-                field.getElementsByClassName("usernamesmall")[0].innerHTML = data[keys[index]].usernmae;
-                index++;
-            }
-
-            while(index <= 5){
-                field = document.getElementById("userentry".concat(index+1));
-                field.style.display = "none";
+                const userList = document.getElementById("userlist");
+                const userEntry = generateUserEntry(data[index].username, data[index].foto);
+                userList.appendChild(userEntry);
                 index++;
             }
         })
 
         .catch(function (error) {
-            console.log(error);
+            //console.log(error);
         });
-}
+};

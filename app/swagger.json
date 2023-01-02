@@ -131,12 +131,7 @@
         ],
         "responses":{
           "200":{
-            "description": "OK",
-            "schema":{
-              "username":{
-                "type": "string"
-              }
-            }
+            "description": "OK"
           },
           "401":{
             "description": "Unauthorized"
