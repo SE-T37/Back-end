@@ -183,6 +183,9 @@ section {
   left: 40%;
   right: 40%;
   text-align: center;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 .btnclosepopup {
@@ -208,4 +211,8 @@ section {
 
 .btnselezionefiltri {
   width: 70%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
 }

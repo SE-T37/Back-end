@@ -4,4 +4,5 @@ search utenti.html user.js ----> Matteo B
 foto profilo.html ---> Riccardo                     OK
 colora pallini ---> RIccardo                        OK
 ordinare le funzioni nel js giusto  ---> 
+popolare meglio il DB --->
 in crea aggiornare foto tappa --->
