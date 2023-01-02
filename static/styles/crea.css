@@ -101,6 +101,9 @@ input {
   width: 500px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 #tappelist {
@@ -162,6 +165,9 @@ input[type='file'] {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 #btnaddtappa {
@@ -170,11 +176,17 @@ input[type='file'] {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 .tappa {
   display: block;
   height: 125px;
+  -moz-box-shadow: 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
 }
 
 section {

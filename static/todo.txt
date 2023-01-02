@@ -1,5 +1,7 @@
 edit profile user.js  ----> Matteo B
-max 10 tappe in crea.html mappa.js----> Riccardo 
+max 10 tappe in crea.html mappa.js ----> Riccardo    OK
 search utenti.html user.js ----> Matteo B
-foto profilo.html ---> Riccardo 
-colora pallini ---> RIccardo
+foto profilo.html ---> Riccardo                     OK
+colora pallini ---> RIccardo                        OK
+ordinare le funzioni nel js giusto  ---> 
+in crea aggiornare foto tappa --->
